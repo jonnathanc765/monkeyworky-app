@@ -1,0 +1,96 @@
+[
+    {
+        "name": "shop",
+        "changeActive": "home",
+        "to": "/home",
+        "customerMarginTopFirstIcon": "true",
+        "customerMarginTopFirstIconNonSelected": "true",
+        "selected": "true",
+        "title": "Compras",
+        "subMenu": "isArray"
+    },
+    {
+        "name": "profile",
+        "changeActive": "profile",
+        "to": "/profile",
+        "customerMarginTopNonSelected": "true",
+        "customerMarginTop": "true",
+        "selected": "true",
+        "title": "Mi Cuenta",
+        "subMenu": [
+            {
+                "title": "Mi perfil",
+                "to": "/profile",
+                "name": "profile"
+            },
+            {
+                "title": "Clave y seguridad",
+                "to": "/profile/password",
+                "name": "profilePassword"
+            },
+            {
+                "title": "Mis mensajes",
+                "to": "/conversations",
+                "name": "conversations"
+            }
+        ]
+    },
+    {
+        "name": "cart",
+        "changeActive": "cart",
+        "to": "/shopping-cart",
+        "customerMarginTop": "true",
+        "customerMarginTopNonSelected": "true",
+        "selected": "true",
+        "title": "Mi Carrito"
+    },
+    {
+        "name": "tracking",
+        "changeActive": "tracking",
+        "to": "/tracking",
+        "customerMarginTop": "true",
+        "customerMarginTopNonSelected": "true",
+        "customerMarginTopNonSelectedTracking": "true",
+        "selected": "true",
+        "title": "Rastrear mi pedido",
+        "subMenu": [
+            {
+                "title": "Buscar una orden",
+                "to": "/tracking",
+                "name": "tracking"
+            }
+        ]
+    },
+    {
+        "name": "conversations",
+        "changeActive": "conversations",
+        "to": "/conversations",
+        "customerMarginTop": "true",
+        "customerMarginTopNonSelected": "true",
+        "customerMarginTopNonSelectedTracking": "true",
+        "selected": "true",
+        "title": "Mis mensajes"
+    },
+    {
+        "name": "registerPayment",
+        "changeActive": "registerPayment",
+        "to": "/my/sales",
+        "customerMarginTop": "true",
+        "customerMarginTopNonSelected": "true",
+        "customerMarginTopNonSelectedTracking": "true",
+        "selected": "true",
+        "title": "Ordenes",
+        "subMenu": [
+            {
+                "title": "Mis ordenes",
+                "to": "/my/sales",
+                "name": "mySales"
+            },
+            {
+                "title": "Registro de pago",
+                "to": "/register/payment",
+                "name": "registerPayment"
+            }
+        ]
+    }
+]

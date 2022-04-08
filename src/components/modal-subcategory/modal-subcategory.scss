@@ -1,0 +1,12 @@
+.modal-product-info {
+  background: white;
+  width: 40rem !important;
+  height: 600px;
+}
+
+.product-info {
+  section {
+    max-height: 85% !important;
+    overflow-y: auto !important;
+  }
+}

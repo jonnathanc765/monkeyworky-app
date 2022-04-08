@@ -1,0 +1,23 @@
+.pl-address {
+  padding-left: 2rem !important;
+}
+
+.modal-address section {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 80% !important;
+}
+
+.modal-address .arrow-address {
+  position: fixed;
+  bottom: 11%;
+  right: 28%;
+}
+
+@media only screen and (max-width: 780px) {
+  .arrow-address {
+    bottom: 13% !important;
+    right: 10% !important;
+  }
+}
+/*# sourceMappingURL=modal.css.map */

@@ -1,0 +1,26 @@
+/* .categories-footer {
+    cursor: pointer !important;
+}
+ */
+.z-index-none {
+  z-index: 0 !important;
+}
+
+.space {
+  left: 5%;
+}
+
+.not-space {
+  left: 0;
+}
+
+.icon-footer:hover {
+  color: white !important;
+}
+
+@media screen and (max-width: 900px) {
+  .footer-class {
+    left: 0;
+  }
+}
+/*# sourceMappingURL=footer.component.css.map */

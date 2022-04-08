@@ -1,0 +1,62 @@
+
+.is-600 {
+  font-weight: 600;
+}
+
+.color-gray {
+  color: rgba($color: $color_gray, $alpha: 0.9) !important;
+}
+
+.border-red {
+  border: 2px solid $color_black;
+  display: block;
+  color: $color_black !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.border-blue {
+  border: 2px solid $color_black;
+  display: block;
+  font-family: 'Montserrat', sans-serif !important;
+  color: $color_black !important;
+}
+
+.border-orange {
+  border: 2px solid $color_black;
+  display: block;
+  color: $color_black !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.border-green {
+  border: 2px solid $color_black;
+  display: block;
+  color: $color_black !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.pagination-link.is-current {
+  background-color: unset !important;
+  border-color: unset !important;
+  font-weight: bold;
+  font-size: 20px !important;
+  border: none !important;
+  color: $color_black !important;
+}
+
+.pagination-link {
+  border-color: none !important;
+  border: none !important;
+  color: $color_black !important;
+}
+
+.class-products {
+  .select{
+    font-family: 'Montserrat', sans-serif !important;
+  }
+  .select:not(.is-multiple):not(.is-loading)::after {
+    border-color: $color_black;
+    right: 1.125em;
+    z-index: 4;
+  }
+}

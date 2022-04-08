@@ -1,0 +1,29 @@
+.excel {
+  background-image: url('http://ecommerceapi.skylubricantes.com/storage/icons-sky/icons/Excel.png');
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+}
+
+.is-600 {
+  font-weight: 600;
+}
+
+.color-gray {
+  color: rgba($color: $color_gray, $alpha: 0.9) !important;
+}
+
+.pagination-link.is-current {
+  background-color: unset !important;
+  border-color: unset !important;
+  font-weight: bold;
+  font-size: 20px !important;
+  border: none !important;
+  color: $color_black !important;
+}
+
+.pagination-link {
+  border-color: none !important;
+  border: none !important;
+  color: $color_black !important;
+}

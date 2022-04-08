@@ -1,0 +1,19 @@
+.modal-product-info {
+  background: white;
+  width: 40rem !important;
+  height: 600px;
+}
+
+.product-info section {
+  max-height: 85% !important;
+  overflow-y: auto !important;
+}
+
+.img-product-info {
+  display: block !important;
+  width: 100% !important;
+  height: 550px !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+}
+/*# sourceMappingURL=modal-product-info.css.map */

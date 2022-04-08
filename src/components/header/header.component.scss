@@ -1,0 +1,127 @@
+.div-header {
+  background-color: $color_yellow !important;
+  border-radius: 0 !important;
+  align-items: center !important;
+  font-family: 'Montserrat', sans-serif !important;
+  .div-search-input {
+    .search-header {
+      padding-left: 2rem !important;
+      padding-right: 1rem !important;
+      max-height: 2rem !important;
+    }
+
+    .icon-header {
+      color: $color_black;
+    }
+  }
+
+  .div-btn-header {
+    .btn-header {
+      padding: 3% !important;
+      background-color: transparent !important;
+      color: black !important;
+      border: none !important;
+      text-decoration: none !important;
+      outline: none !important;
+    }
+
+    .btn-header:active,
+    .btn-header:focus {
+      border: none !important;
+      outline: none !important;
+    }
+  }
+}
+
+.control.has-icons-left .icon,
+.control.has-icons-right .icon {
+  z-index: 0 !important;
+}
+
+.class-header {
+  z-index: 1 !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.drop-header {
+  .dropdown-menu {
+    min-width: 8.5rem !important;
+  }
+}
+
+.icon-notification-header {
+  width: 25px;
+  height: auto;
+}
+
+.drop-notification-header {
+  .dropdown-menu {
+    min-width: 23rem !important;
+    background: $color_text_gray_outside;
+    border: 1px solid $color_red_outside;
+
+    .dropdown-content {
+      max-height: 30rem !important;
+      overflow-y: auto;
+    }
+  }
+}
+
+button {
+  border: none !important;
+  outline: none !important;
+}
+
+button:active,
+button:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.p-0 {
+  padding: 0% !important;
+}
+
+.img-icon-header {
+  height: 77px;
+  width: auto !important;
+}
+
+.count-notification-header {
+  border: 1px solid $color_red_outside;
+  background: $color_text_gray_outside !important;
+  padding: 3px !important;
+  border-radius: 100%;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  max-width: 30px !important;
+  max-height: 30px !important;
+  top: -0.6rem;
+  left: 0.9rem !important;
+}
+
+@media only screen and (max-width: 780px) {
+  .img-icon-header {
+    height: 95px;
+  }
+
+  .count-notification-header {
+    padding: 1px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    top: -0.5rem;
+    left: 0.5rem !important;
+  }
+
+  .drop-notification-header {
+    .dropdown-menu {
+      min-width: 11rem !important;
+    }
+  }
+
+  .icon-notification-header {
+    width: 18px !important;
+  }
+}

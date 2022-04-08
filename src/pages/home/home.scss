@@ -1,0 +1,78 @@
+
+.banner-home {
+  margin: 0 !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.category-fixed{
+  position:fixed;
+  background-color: #4a4a4a;
+  top:0px;
+  left:0px;
+  width: 100%;
+  z-index: 10;
+  animation: aparecer .5s ease-in-out;
+}
+
+@keyframes aparecer{
+  to{
+    transform: translateY(0%);
+  } 
+  from{
+    transform: translateY(-100%);
+  }
+}
+.category-scrollbar{
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  display: flex !important;
+  width: 100% !important;
+  height: auto !important;
+  margin:auto !important;
+  padding: 15px 0px !important;
+}
+
+.category-scrollbar::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+.category-scrollbar::-webkit-scrollbar-track {
+  
+}
+ 
+.category-scrollbar::-webkit-scrollbar-thumb {
+}
+
+.category-scrollbar .div-categories{
+  display: inline-block !important;
+  margin:auto !important;
+  margin-left:25px !important;
+  margin-right: 25px !important;
+  max-width: 150px;
+}
+
+.product{
+  margin:0px !important;
+}
+
+.products-father {
+  display: table !important;
+  width: 100% !important;
+}
+
+.button-transparent{
+  background-color: transparent !important;
+  font-style: oblique !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+}
+
+
+@media only screen and (min-width:768px){
+  .product{
+    margin: 10px;
+    margin-top: 15px;
+    margin-bottom:15px;
+  }
+}

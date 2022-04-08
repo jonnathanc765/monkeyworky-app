@@ -1,0 +1,29 @@
+.class-delete-payment {
+  position: absolute;
+  right: 12px !important;
+  top: 12px !important;
+  background-color: $color_red_outside;
+}
+
+.modal-my-sales {
+  section {
+    max-height: 75% !important;
+    overflow-y: auto !important;
+  }
+}
+
+.arrow-moda-my-sales {
+  z-index: 1;
+  position: fixed;
+  bottom: 16%;
+  right: 25% !important;
+}
+.class-delete-payment:hover {
+  background-color: $color_red;
+}
+
+@media only screen and (max-width: 780px) {
+  .class-delete-payment {
+    top: 24px !important;
+  }
+}

@@ -1,0 +1,66 @@
+[
+    {
+        "name": "registerPayment",
+        "changeActive": "registerPayment",
+        "to": "/my/sales",
+        "customerMarginTopFirstIcon": "true",
+        "customerMarginTopFirstIconNonSelected": "true",
+        "selected": "true",
+        "title": "Mis Ventas"
+    },
+    {
+        "name": "productsAdmin",
+        "changeActive": "productsAdmin",
+        "to": "/products",
+        "customerMarginTopNonSelected": "true",
+        "customerMarginTop": "true",
+        "selected": "true",
+        "title": "Gestión productos",
+        "subMenu": [
+            {
+                "title": "Agregar categoría",
+                "to": "/categories",
+                "name": "categories"
+            },
+            {
+                "title": "Agregar subcategoría",
+                "to": "/sub/categories",
+                "name": "subCategories"
+            },
+            {
+                "title": "Agregar productos",
+                "to": "/products",
+                "name": "productsAdmin"
+            }
+        ]
+    },
+    {
+        "name": "banks",
+        "changeActive": "banks",
+        "to": "/banks",
+        "customerMarginTop": "true",
+        "customerMarginTopNonSelected": "true",
+        "selected": "true",
+        "title": "Gestion de bancos"
+    },
+    {
+        "name": "conversations",
+        "changeActive": "conversations",
+        "to": "/conversations",
+        "customerMarginTop": "true",
+        "customerMarginTopNonSelected": "true",
+        "customerMarginTopNonSelectedTracking": "true",
+        "selected": "true",
+        "title": "Mis mensajes"
+    },
+    {
+        "name": "listUsers",
+        "changeActive": "listUsers",
+        "to": "/list/users",
+        "customerMarginTop": "true",
+        "customerMarginTopNonSelected": "true",
+        "customerMarginTopNonSelectedTracking": "true",
+        "selected": "true",
+        "title": "Gestión de clientes"
+    }
+]

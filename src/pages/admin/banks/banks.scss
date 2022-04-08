@@ -1,0 +1,127 @@
+.is-600 {
+  font-weight: 600;
+}
+
+.color-gray {
+  color: rgba($color: $color_gray, $alpha: 0.9) !important;
+}
+
+@media screen and (min-width: 769px) {
+  .field.is-horizontal {
+    display: flex !important;
+  }
+  .field-label.is-normal {
+    padding-top: 0.375em !important;
+  }
+  .field-label {
+    flex-basis: 0 !important;
+    flex-grow: 1 !important;
+    flex-shrink: 0 !important;
+    margin-right: 1.5rem !important;
+    text-align: left !important;
+  }
+
+}
+
+.field:not(:last-child) {
+  margin-bottom: 0.75rem !important;
+}
+
+/*   .control.has-icons-left .icon, .control.has-icons-right .icon {
+    color: #dbdbdb !important;
+    height: 2.5em !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 2.5em !important;
+    z-index: 4 !important;
+} */
+
+.class-bank {
+  .control {
+    box-sizing: border-box !important;
+    clear: both !important;
+    font-size: 1rem !important;
+    position: relative !important;
+    text-align: left !important;
+  }
+
+  .control.has-icons-left .input,
+  .control.has-icons-left .select select {
+    padding-left: 2.5em !important;
+  }
+  .input:active,
+  .input:focus,
+  .is-active.input,
+  .is-active.textarea,
+  .is-focused.input,
+  .is-focused.textarea,
+  .select select.is-active,
+  .select select.is-focused,
+  .select select:active,
+  .select select:focus,
+  .textarea:active,
+  .textarea:focus {
+    border-color: #485fc7 !important;
+    box-shadow: 0 0 0 0.125em rgb(72 95 199 / 25%) !important;
+  }
+
+  .input,
+  .select select,
+  .textarea {
+    background-color: #fff !important;
+    border-color: #dbdbdb !important;
+    border-radius: 0.375em !important;
+    color: #363636 !important;
+  }
+  .select:not(.is-multiple) {
+    height: 2.5em !important;
+  }
+
+  .select select:not([multiple]) {
+    padding-right: 2.5em !important;
+  }
+  .select {
+    display: inline-block !important;
+    max-width: 100% !important;
+    position: relative !important;
+    vertical-align: top !important;
+  }
+  .select:not(.is-multiple):not(.is-loading)::after {
+    border-color: #485fc7 !important;
+    right: 1.125em !important;
+    z-index: 4 !important;
+  }
+  .select select:focus,
+  .textarea:focus,
+  .input:focus,
+  .select select.is-focused,
+  .is-focused.textarea,
+  .is-focused.input,
+  .select select:active,
+  .textarea:active,
+  .input:active,
+  .select select.is-active,
+  .is-active.textarea,
+  .is-active.input {
+    border-color: #3273dc !important;
+    box-shadow: 0 0 0 0.125em rgb(50 115 220 / 25%) !important;
+  }
+  .select select:hover,
+  .textarea:hover,
+  .input:hover,
+  .select select.is-hovered,
+  .is-hovered.textarea,
+  .is-hovered.input {
+    border-color: #b5b5b5 !important;
+  }
+}
+
+.radio + .radio {
+  margin-left: 0.5em !important;
+}
+
+.button-radius {
+  transition-duration: 0.3s;
+  border-radius: 15rem !important;
+}

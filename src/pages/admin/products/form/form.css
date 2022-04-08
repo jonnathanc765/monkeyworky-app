@@ -1,0 +1,15 @@
+#modal-products-admin .modal-card {
+  overflow-y: auto;
+  max-height: 90% !important;
+}
+
+.class-price-text {
+  text-align: center;
+}
+
+@media only screen and (max-width: 780px) {
+  .class-price-text {
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=form.css.map */

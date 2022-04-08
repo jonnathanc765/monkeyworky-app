@@ -1,0 +1,30 @@
+.div-card {
+  .div-card-father {
+    height: 270px !important;
+  }
+  .img-card {
+    position: relative;
+    width: 6rem !important;
+    height: 6rem !important;
+    justify-content: center !important;
+    margin: auto !important;
+
+    img {
+      position: absolute;
+      top: 13%;
+      margin: auto !important;
+      left: 0;
+      right: 0;
+      width: 9rem !important;
+    }
+  }
+}
+
+.border-color {
+  border-left: 0.15rem solid white;
+}
+
+.border-card {
+  margin-left: 1.2rem !important;
+  height: 5rem !important;
+}

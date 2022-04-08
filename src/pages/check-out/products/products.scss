@@ -1,0 +1,36 @@
+.box-shadow-check {
+  box-shadow: 5px 3px 18px -14px rgb(0 0 0 / 75%);
+}
+
+.max-products {
+  overflow: auto !important;
+  max-height: 400px !important;
+}
+
+.logo-product-check {
+  display: block !important;
+  width: 15% !important;
+  height: 120px !important;
+  object-fit: contain !important;
+}
+
+.delete-item-cart {
+  position: absolute;
+  bottom: 40%;
+  right: 1%;
+
+  button {
+    padding: 0.3rem !important;
+  }
+}
+
+
+@media only screen and (max-width: 780px) {
+  .delete-item-cart {
+    right: 0 !important;
+    button {
+      height: 30px !important;
+      padding: 0 !important;
+    }
+  }
+}

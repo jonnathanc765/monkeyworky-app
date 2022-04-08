@@ -1,0 +1,14 @@
+.pagination-link.is-current {
+  background-color: unset !important;
+  border-color: unset !important;
+  font-weight: bold;
+  font-size: 20px !important;
+  border: none !important;
+  color: $color_black !important;
+}
+
+.pagination-link {
+  border-color: none !important;
+  border: none !important;
+  color: $color_black !important;
+}

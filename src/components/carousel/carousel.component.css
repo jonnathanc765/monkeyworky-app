@@ -1,0 +1,71 @@
+.carousel__item {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-carousel {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.btn-carousel-left {
+  position: absolute !important;
+  left: 0 !important;
+}
+
+.btn-carousel-rigth {
+  position: absolute !important;
+  right: 0 !important;
+}
+
+.btn-img-carousel {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.pagination.banner {
+  position: absolute;
+  bottom: 0;
+  right: 3%;
+  left: 3%;
+  top: 0;
+}
+
+.parallax-slider {
+  transition: opacity 0.4s ease-in;
+  -webkit-transition: opacity 0.4s ease-in;
+  -moz-transition: opacity 0.4s ease-in;
+  -ms-transition: opacity 0.4s ease-in;
+  -o-transition: opacity 0.4s ease-in;
+  opacity: 1;
+}
+
+.transitioning-src {
+  transition: opacity 0.4s ease-out;
+  -webkit-transition: opacity 0.4s ease-out;
+  -moz-transition: opacity 0.4s ease-out;
+  -ms-transition: opacity 0.4s ease-out;
+  -o-transition: opacity 0.4s ease-out;
+  opacity: 0;
+}
+
+.btn-rigth-carousel {
+  -webkit-transform: rotate(180deg) !important;
+          transform: rotate(180deg) !important;
+}
+
+@media only screen and (max-width: 780px) {
+  .btn-img-carousel {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .pagination.banner {
+    right: 1.5%;
+    left: 1.5%;
+  }
+}
+/*# sourceMappingURL=carousel.component.css.map */

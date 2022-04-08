@@ -1,0 +1,36 @@
+.select-profile {
+  border: none !important;
+  border-bottom: 1px solid white !important;
+  border-radius: 0px !important;
+  outline: none !important;
+  background-color: transparent !important;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.select-profile option{
+  color: $color_black;
+}
+
+.select-profile::placeholder{
+  color:white !important;
+}
+
+.class-profile {
+  .select:not(.is-multiple):not(.is-loading)::after {
+    border-color: white;
+    right: 1.125em;
+    z-index: 4;
+  }
+}
+
+.border-red {
+  border: 2px solid white;
+  border-radius: 15px;
+  display: block;
+  color: $color_yellow !important;
+}
+
+.btn-profile {
+    position: relative !important;
+    bottom: -26px !important;
+}

@@ -1,0 +1,30 @@
+.text-red-big{
+    font-size: 60px !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+    color: $color-red !important;
+    letter-spacing: 10px !important;
+}
+
+.text-color-gray{
+    font-size: 40px !important;
+    line-height: 1 !important;
+    color: $color-gray !important;
+}
+
+.text-p{
+    font-size: 25px !important;
+    font-weight: bold !important;
+    color: $color-gray !important;
+}
+
+.text-red{
+    font-weight: bold !important;
+    color: $color-red !important;
+}
+
+.background-color{
+    background-color: #F2F2F2 !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+}

@@ -1,0 +1,111 @@
+.div-father {
+  min-height: 500px !important;
+  max-height: 500px !important;
+  overflow-x: hidden;
+  max-width: 100% !important;
+}
+
+.father-chat {
+  min-height: 50px !important;
+}
+
+.background-chat {
+  background-color: $color_text_gray;
+}
+
+.btn-new-message {
+  z-index: 1;
+  position: absolute;
+  bottom: 20px !important;
+  right: 15px;
+  color: $color_text_gray_outside;
+  border-radius: 200px !important;
+  width: 45px !important;
+  height: 45px !important;
+
+  i {
+    position: relative;
+    top: 3px;
+  }
+}
+
+.info-chat {
+  height: 8%;
+}
+
+.message-overflow {
+  white-space: nowrap !important;
+  overflow-x: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.input-chat-div {
+  position: absolute;
+  bottom: 0 !important;
+}
+
+.send-message {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.arrow-conversation {
+  position: sticky !important;
+  bottom: 7%;
+  left: 95%;
+  width: 15px !important;
+  height: 15px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 80% !important;
+  background-color: white;
+  text-shadow: 1px 1px 7px rgba($color: #000000, $alpha: 0.4);
+}
+
+.input-chat {
+  margin: 7px 0 7px 0 !important;
+  border: none;
+  background-color: white;
+  outline: none;
+  border-radius: 5px !important;
+}
+
+.div-messages {
+  height: 400px !important;
+  top: 0;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+
+  .message-from {
+    justify-content: flex-start;
+
+    .label-message-from {
+      max-width: 70% !important;
+      background-color: white;
+      color: black;
+    }
+  }
+
+  .message-div {
+    padding: 1% !important;
+    padding-top: 2% !important;
+    display: flex !important;
+  }
+
+  .message-to {
+    justify-content: flex-end;
+    .label-message-to {
+      max-width: 70% !important;
+      background-color: $color_red;
+    }
+  }
+
+  .label-message {
+    padding: 1% !important;
+    flex-wrap: wrap !important;
+    border-radius: 10px !important;
+    color: white;
+  }
+}

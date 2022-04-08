@@ -1,0 +1,12 @@
+.banner-container {
+  -webkit-box-shadow: 6px 1px 15px 0px black;
+          box-shadow: 6px 1px 15px 0px black;
+  padding: 50px !important;
+}
+
+.banner-container .banner-image {
+  background-position: center;
+  background-size: cover;
+  padding: 50px !important;
+}
+/*# sourceMappingURL=banner.component.css.map */

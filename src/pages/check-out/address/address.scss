@@ -1,0 +1,12 @@
+.btn-address {
+    border: none !important;
+    background: transparent !important;
+}
+
+.select-address-check {
+    .select:not(.is-multiple):not(.is-loading)::after {
+      border-color: $color_black;
+      right: 1.125em;
+      z-index: 4;
+    }
+  }

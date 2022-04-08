@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,mBAAmB,CAAC;EAClB,UAAU,EAAE,KAAK;EACjB,KAAK,EAAE,gBAAgB;EACvB,MAAM,EAAE,KAAK;CACd;;AAED,AACE,aADW,CACX,OAAO,CAAC;EACN,UAAU,EAAE,cAAc;EAC1B,UAAU,EAAE,eAAe;CAC5B;;AAGH,AAAA,iBAAiB,CAAC;EAChB,OAAO,EAAE,gBAAgB;EACzB,KAAK,EAAE,eAAe;EACtB,MAAM,EAAE,gBAAgB;EACxB,UAAU,EAAE,kBAAkB;CAC/B",
+    "sources": [
+        "modal-product-info.scss"
+    ],
+    "names": [],
+    "file": "modal-product-info.css"
+}

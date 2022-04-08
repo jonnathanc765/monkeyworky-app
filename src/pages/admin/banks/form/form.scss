@@ -1,0 +1,19 @@
+.delete-modal {
+  position: absolute !important;
+  right: 10px !important;
+  top: 15px !important;
+}
+
+.modal-form-bank {
+  section {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 75% !important;
+  }
+
+  .arrow-banks {
+    position: fixed;
+    bottom: 17%;
+    right: 21% !important;
+  }
+}

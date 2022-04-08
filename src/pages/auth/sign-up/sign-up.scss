@@ -1,0 +1,76 @@
+.button-radius:hover {
+  font-size: 1rem !important;
+}
+
+.pl-ajust {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+}
+
+.div-form {
+  margin-top: 3% !important;
+  .control {
+    input {
+      background-color: $color_text_gray !important;
+    }
+  }
+}
+
+.w-ajust {
+  width: 45% !important;
+}
+
+.div-select {
+  overflow: hidden;
+  width: 100% !important;
+  position: relative;
+  background-color: $color_text_gray !important;
+
+  .input-dni {
+    border: none !important;
+    background-color: transparent !important;
+    height: 100% !important;
+    padding: 5px !important;
+  }
+}
+
+.div-form {
+  width: 50%;
+}
+
+.border-dni {
+  border: 1px solid $color_red;
+  border-radius: 10px !important;
+}
+
+.border-dni2 {
+  border: 1px solid $color_dark_gray;
+  border-radius: 10px !important;
+}
+
+select {
+  background: $color_text_gray !important;
+  border: none !important;
+  padding: 5px;
+  padding-left: 3% !important;
+  padding-right: 1% !important;
+  appearance: none !important;
+  border-radius: 10px !important;
+}
+select:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 780px) {
+  .pl-ajust {
+    padding: 0.2rem !important;
+  }
+
+  .w-ajust {
+    width: 100% !important;
+  }
+
+  .div-form {
+    width: 80%;
+  }
+}

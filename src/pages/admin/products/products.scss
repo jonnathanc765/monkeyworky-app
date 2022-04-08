@@ -1,0 +1,12 @@
+.class-products {
+  .select:not(.is-multiple):not(.is-loading)::after {
+    border-color: $color_black;
+    right: 1.125em;
+    z-index: 4;
+  }
+}
+
+.products-father {
+  display: table !important;
+  width: 100% !important;
+}

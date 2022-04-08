@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "icon": "fab fa-instagram",
+        "text": "@monkeyworky",
+        "url": "#"
+    },
+    {
+        "id": 2,
+        "icon": "fab fa-facebook-square",
+        "text": "@monkeyworky",
+        "url": "#"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "registerPayment",
+        "to": "/my/sales",
+        "img": "/storage/icons-sky/icons/register-payment.png",
+        "imgActive": "/storage/icons-sky/icons/register-payment.png"
+    },
+    {
+        "name": "productsAdmin",
+        "to": "/products",
+        "img": "/storage/icons-sky/icons/productos.png",
+        "imgActive": "/storage/icons-sky/icons/productos.png"
+    },
+    {
+        "name": "banks",
+        "to": "/banks",
+        "img": "/storage/icons-sky/icons/banks.png",
+        "imgActive": "/storage/icons-sky/icons/banks.png"
+    },
+    {
+        "name": "conversations",
+        "to": "/conversations",
+        "img": "/storage/icons-sky/icons/conversation.png",
+        "imgActive": "/storage/icons-sky/icons/conversation.png"
+    },
+    {
+        "name": "profile",
+        "to": "/list/users",
+        "img": "/storage/icons-sky/icons/config.png",
+        "imgActive": "/storage/icons-sky/icons/config.png"
+    }
+]
