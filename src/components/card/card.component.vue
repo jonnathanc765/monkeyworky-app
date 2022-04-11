@@ -6,10 +6,10 @@
       </div>
       <div class="content has-text-white m-3">
         <span
-          class="has-text-white m-3 is-size-7 has-text-centered is-uppercase has-text-weight-bold"
+          class="has-text-white m-3 is-size-11 has-text-centered is-uppercase has-text-weight-bold"
           >{{ item.title }}</span
         >
-        <p class="is-size-7 has-text-weight-normal">
+        <p class="is-size-8 has-text-weight-normal">
           {{ item.description }}
         </p>
       </div>

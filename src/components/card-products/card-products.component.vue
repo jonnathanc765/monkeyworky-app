@@ -12,10 +12,10 @@
       @click="openInfo"
     />
     <span
-      class="column is-12 has-text-left ml-2 mt-5 product-name is-uppercase is-size-6 has-text-weight-bold text-monserrat"
+      class="column is-10 has-text-left ml-2 mt-5 product-name is-uppercase is-size-6 has-text-weight-bold text-monserrat"
       >{{ this.item.name }}</span
     >
-    <div class="column mt-4 is-12 ml-2 has-text-white has-text-left pb-3">
+    <div class="column mt-4 is-10 ml-2 has-text-white has-text-left pb-3">
       <span class="p-1 is-size-7 product-description text-monserrat">{{
         this.item.sub_category.name
       }}</span>
