@@ -82,6 +82,8 @@
         </div>
       </div>
 
+    
+
       <!-- INFO ADDRESS -->
       <div
       v-if="details.address"
@@ -132,6 +134,15 @@
       </div>
     </div>
 
+    <div class="column is-12 mt-4 pb-4">
+      <button
+        @click="sendWhatsapp"
+        class="button is-primary background-yellow button-radius text-dark text-monserrat p-2 color-text-dark-gray"
+      >
+        Enviar a Whatsapp
+      </button>
+    </div>
+
     <div class="column is-12  mt-4 pb-4">
       <router-link
         :to="'/tracking/' + route.params.id"
@@ -145,7 +156,7 @@
             alt=""
           />
         </span>
-        <span class="is-size-6">Rastrea tu pedido</span>
+        <span class="is-size-6 color-text-dark-gray">Rastrea tu pedido</span>
       </router-link>
     </div>
   </div>

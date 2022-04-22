@@ -8,6 +8,8 @@ import { computed } from '@vue/runtime-core';
 import { alertBulmaInputEmpty } from '../../../core/global/alert';
 import { addClassValidation, removeClassValidation } from '../../../core/global/validation';
 import { useStore } from 'vuex';
+import products from '@/pages/admin/products/products';
+
 export default {
     name: 'SignInComponent',
     components: {
@@ -64,8 +66,12 @@ export default {
 
             await authStore.dispatch('signIn', form.value).then(() => {
                 registerProducts();
+                if(productsLocal.value.length > 0){
+                    router.push('/shopping-cart');
+                } else {
+                    router.push('/home');
+                }
                 spinner.value = false;
-                router.push('/home');
             }).catch((error: any) => {
                 console.log(error);
                 spinner.value = false;

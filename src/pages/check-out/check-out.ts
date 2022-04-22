@@ -6,6 +6,7 @@ import { useRouter } from 'vue-router';
 import { utilitiesStore } from '../../store/utilities';
 import { errorsApi } from '../../core/global/errors';
 import { validateEmail } from '../../core/global/validation';
+import { alertConfirmationBulma } from '../../core/global/alert';
 
 export default {
 
@@ -91,25 +92,8 @@ export default {
                     return;
                 }
             }
-            if (num > 5) {
-                if (checkEmptyPayment()) {
-                    if (checkOut.state.registerPay.image !== '') {
-                        if (validateEmail(checkOut.state.registerPay.email)) {
-                            if (checkOut.state.registerPay.name.length > 5) {
-                                await send();
-                                return;
-                            }
-                            alertBulma('warning', 'Campo incorrecto (Item 5)', 'El nombre del titular de la cuenta debe tener como mínimo 6 caracteres');
-                            return;
-                        }
-                        alertBulma('warning', 'Campo incorrecto (Item 5)', 'Debe ingresar un correo válido.');
-                        return;
-                    }
-                    alertBulma('warning', 'Campo vacío (Item 5)', 'Debe subir el comprobante de pago');
-                    return;
-                }
-                checkOut.commit('setTruncate', true);
-                alertBulma('warning', 'Campos vacíos (Item 5)', 'Debe rellenar todos los datos requeridos');
+            if (num > 4) {
+                await send();
                 return;
             }
             btnActive.value = num;
@@ -137,30 +121,69 @@ export default {
                 loader.value = false;
                 if (error.status === 422) {
                     const errors = errorsApi(error.data.errors);
-                    alertBulma('danger', 'Se encontraron los siguientes errores', `${errors}`);
+                    alertBulma('warning', 'Se encontraron los siguientes errores', `${errors}`);
                     return;
                 } else if (error.status === 403) {
-                    alertBulma('danger', 'Dirección no encontrada', `La dirección suministrada no fue añadida, vuelva al paso 3 y presione en "Añadir nueva dirección"`);
+                    alertBulma('warning', 'Dirección no encontrada', `La dirección suministrada no fue añadida, vuelva al paso 3 y presione en "Añadir nueva dirección"`);
                     return;
                 } else if (error.status === 406) {
-                    alertBulma('danger', 'Perfil no completado', `Para poder realizar una orden primero debe rellenar todos los datos en el perfil`);
+                    alertBulma('warning', 'Perfil no completado', `Para poder realizar una orden primero debe rellenar todos los datos en el perfil`);
                     return;
                 }
-                alertBulma('danger', 'Error', 'Hubo un problema a la hora de procesar su orden, por favor vuelva a intentarlo');
+                alertBulma('warning', 'Error', 'Hubo un problema a la hora de procesar su orden, por favor vuelva a intentarlo');
             });
         };
 
         const pay = async (id: number) => {
             await checkOut.dispatch('payApi', id).then((res) => {
+                const generar = generateWhatsappText(res);
+                alertConfirmationBulma('warning', 'Redirigiendo a Whatsappp', 'Se agregó satisfactoriamente el pedido, deseas enviar el pedido a Whatsapp?', () => {
+                    window.location.replace("https://api.whatsapp.com/send/?phone=%2B584149549050&text="+generar)
+                }, () => {
+                }, 'Enviar mi pedido a Whatsapp', 'Salir');
                 loader.value = false;
                 router.push(`/order/${id}`);
             }).catch(() => {
                 loader.value = false;
-                alertBulma('danger', 'Error', 'La orden fue generada satisfactoriamente, pero hubo un problema con el registro del pago, por favor registre el pago nuevamente.', { label: 'Entendido' });
+                alertBulma('warning', 'Error', 'La orden fue generada satisfactoriamente, pero hubo un problema con el registro del pago, por favor registre el pago nuevamente.', { label: 'Entendido' });
                 router.push(`/register/payment`);
             });
         };
 
+        const generateWhatsappText = (req: any) => {
+            const data = req.data;
+            let text = null;
+            if(data){
+                text = `%2A+-----+%2ADetalle+del+Pedido+Nro.+${data.payment.id}%2A+-----+%2A+%0A`;
+                if(data.products){
+                    for(let product of data.products){
+                        text = text+`%0A%2A${product.quantity}+x+${product.product.name}%2A+$${product.variation.price}.00+Cada+Uno/a`;
+                    }
+                    text = text+`%0A%0ATotal:+%2A$${data.order.total}.00%2A%0A`
+                }
+                text = text+`%0A%2A+-----+%2AInformación+del+cliente%2A+-----+%2A+%0A`;
+                if(data.order){
+                    text = text+`%0AMetodo+de+entrega:+%2A${data.order.type}%2A`;
+                    text = text+`%0ACliente:+%2A${data.address.user.people.firstname}+${data.address.user.people.lastname}%2A`;
+                    text = text+`%0AEmail:+%2A${data.address.user.email}%2A`;
+                    text = text+`%0ADirección+de+entega:+%2A${data.address.address}%2A`;
+                    text = text+`%0AEstado:+%2A${data.address.parish.state.name}%2A`;
+                    text = text+`%0AParroquia:+%2A${data.address.parish.name}%2A`;
+                    text = text+`%0AMunicipio:+%2A${data.address.parish.municipality.name}%2A`;           
+                }
+                text = text+`%0A%0A%2A+-----+%2AInformación+del+Pago%2A+-----+%2A+%0A`;
+                if(data.payment){
+                    text = text+`%0ABanco+de+origen:+%2A${data.payment.destination}%2A`;
+                    text = text+`%0ATitular+de+la+cuenta:+%2A${data.payment.owner}%2A`; 
+                    text = text+`%0AReferencia:+%2A${data.payment.reference}%2A`; 
+                    text = text+`%0AFecha:+%2A${data.payment.date}%2A`;        
+                }
+            }
+            return text;
+        }
+
         return { products, btnActive, changeActive, text, loader };
     },
+
+
 };

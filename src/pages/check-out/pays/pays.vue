@@ -112,7 +112,7 @@ export default {
       )
         .then(() => {
           alertBulma(
-            'danger',
+            'warning',
             'Texto copiado',
             'Hemos copiado los datos del banco en su portapapeles.',
             { label: 'Entendido' }
@@ -120,7 +120,7 @@ export default {
         })
         .catch(() => {
           alertBulma(
-            'danger',
+            'warning',
             'Error en la copia',
             'Hubo un error a la hora de copiar el texto.',
             { label: 'Entendido' }

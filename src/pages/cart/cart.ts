@@ -1,7 +1,7 @@
 import { ref, onMounted, defineAsyncComponent } from 'vue';
 import { computed } from '@vue/runtime-core';
 import { cartStore } from '../../store/cart';
-import alertBulma from '../../core/global/alert';
+import alertBulma, { alertConfirmationBulma } from '../../core/global/alert';
 import { useRouter } from 'vue-router';
 import { utilitiesStore } from '../../store/utilities';
 import { useStore } from 'vuex';
@@ -118,7 +118,11 @@ export default {
                     isModal.value = true;
                 }
             } else {
-                alertBulma('warning', 'Sin autenticar', 'Para poder continuar debes iniciar sesión');
+                alertConfirmationBulma('warning', 'Sin autenticar', 'Para poder continuar debes iniciar sesión', () => {
+                    router.push('/auth/sign-in');
+                },() => {
+                    router.push('/auth/sign-in');
+                });
             }
         };
 
