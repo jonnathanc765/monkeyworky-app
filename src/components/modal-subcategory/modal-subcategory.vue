@@ -2,8 +2,8 @@
   <div id="modal-address" class="modal modal-products is-active">
     <div class="modal-background"></div>
     <div class="column column is-6 is-11-mobile modal-card">
-      <header class="modal-card-head background-red">
-        <p class="modal-card-title has-text-white">
+      <header class="modal-card-head background-yellow">
+        <p class="modal-card-title has-text-dark">
           Sub categorias
         </p>
         <button @click="dismiss" class="delete" aria-label="close"></button>

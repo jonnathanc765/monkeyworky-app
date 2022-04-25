@@ -19,8 +19,8 @@
     <!-- BANNER AND CATEGORIES -->
     <div class="class-header gradient-gray background-monkeys mb-6">
       <!-- CATEGORIES -->
-      <!-- <div class="category column is-12" style="max-width: 800px; margin:auto;" id="myCategory">
-        <ul class="category-scrollbar pt-2">
+      <div class="category column is-12" style="max-width: 800px; margin:auto;" id="myCategory">
+        <ul class="category-scrollbar pt-2 m-auto">
           <CategoriesComponent
             v-for="(item, index) in categories"
             :key="index"
@@ -31,7 +31,6 @@
           ></CategoriesComponent>
         </ul>
       </div>
-       -->
       <!-- BANNER -->
       <div class="column is-full-desktop is-hidden-mobile">
         <BannerComponent></BannerComponent>

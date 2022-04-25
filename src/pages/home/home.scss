@@ -7,12 +7,13 @@
 
 .category-fixed{
   position:fixed;
-  background-color: #4a4a4a;
+  background-color: #03111A;
   top:0px;
   left:0px;
   width: 100%;
   z-index: 10;
   animation: aparecer .5s ease-in-out;
+  
 }
 
 @keyframes aparecer{
@@ -31,6 +32,8 @@
   height: auto !important;
   margin:auto !important;
   padding: 15px 0px !important;
+  max-width: 600px !important;
+  margin: auto !important;
 }
 
 .category-scrollbar::-webkit-scrollbar {
