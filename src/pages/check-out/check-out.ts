@@ -111,11 +111,17 @@ export default {
             loader.value = true;
             await checkOut.dispatch('checkOutApi').then((res) => {
                 if (checkEmptyPayment()) {
-                    pay(res.id);
+                    pay(res.order.id);
                 } else {
                     loader.value = false;
-                    router.push(`/order/${res.id}`);
+                    router.push(`/order/${res.order.id}`);
                 }
+                const generar = generateWhatsappText(res);
+                alertConfirmationBulma('warning', 'Redirigiendo a Whatsappp', 'Se agregó satisfactoriamente el pedido, deseas enviar el pedido a Whatsapp?', () => {
+                    window.location.replace("https://api.whatsapp.com/send/?phone=%2B584149549050&text="+generar)
+                }, () => {
+                }, 'Enviar mi pedido a Whatsapp', 'Salir');
+
             }).catch((error) => {
                 console.log(error);
                 loader.value = false;
@@ -136,11 +142,6 @@ export default {
 
         const pay = async (id: number) => {
             await checkOut.dispatch('payApi', id).then((res) => {
-                const generar = generateWhatsappText(res);
-                alertConfirmationBulma('warning', 'Redirigiendo a Whatsappp', 'Se agregó satisfactoriamente el pedido, deseas enviar el pedido a Whatsapp?', () => {
-                    window.location.replace("https://api.whatsapp.com/send/?phone=%2B584149549050&text="+generar)
-                }, () => {
-                }, 'Enviar mi pedido a Whatsapp', 'Salir');
                 loader.value = false;
                 router.push(`/order/${id}`);
             }).catch(() => {
@@ -151,10 +152,10 @@ export default {
         };
 
         const generateWhatsappText = (req: any) => {
-            const data = req.data;
+            const data = req;
             let text = null;
             if(data){
-                text = `%2A+-----+%2ADetalle+del+Pedido+Nro.+${data.payment.id}%2A+-----+%2A+%0A`;
+                text = `%2A+-----+%2ADetalle+del+Pedido+Nro.+${data.order.id}%2A+-----+%2A+%0A`;
                 if(data.products){
                     for(let product of data.products){
                         text = text+`%0A%2A${product.quantity}+x+${product.product.name}%2A+$${product.variation.price}.00+Cada+Uno/a`;
@@ -170,13 +171,6 @@ export default {
                     text = text+`%0AEstado:+%2A${data.address.parish.state.name}%2A`;
                     text = text+`%0AParroquia:+%2A${data.address.parish.name}%2A`;
                     text = text+`%0AMunicipio:+%2A${data.address.parish.municipality.name}%2A`;           
-                }
-                text = text+`%0A%0A%2A+-----+%2AInformación+del+Pago%2A+-----+%2A+%0A`;
-                if(data.payment){
-                    text = text+`%0ABanco+de+origen:+%2A${data.payment.destination}%2A`;
-                    text = text+`%0ATitular+de+la+cuenta:+%2A${data.payment.owner}%2A`; 
-                    text = text+`%0AReferencia:+%2A${data.payment.reference}%2A`; 
-                    text = text+`%0AFecha:+%2A${data.payment.date}%2A`;        
                 }
             }
             return text;

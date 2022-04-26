@@ -8,10 +8,11 @@
   ></SpinnerComponent>
   <div
     v-if="details.id && !isActive"
-    class="column mt-4 div-shopping-cart is-block-mobile is-justify-content-space-between mb-6 pb-6"
+    class="gradient-gray background-monkeys column div-shopping-cart is-block-mobile is-justify-content-space-between"
   >
+    <br>
     <h2
-      class="column is-10 m-auto has-text-left is-size-4 has-text-weight-bold mt-5 mb-2 color-text-dark-gray"
+      class="column is-10 m-auto has-text-left is-size-4 has-text-weight-bold mt-5 mb-2 color-text-white d-block"
     >
       Estado de la orden #{{ details.id }}
     </h2>

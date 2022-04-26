@@ -42,7 +42,6 @@ export default {
         const details = computed(() => {
             return orderStore.state.details;
         });
-        console.log(details.value);
 
         const openChange = (row: any) => {
             modal.value = true;
@@ -129,9 +128,10 @@ export default {
 
         const generateWhatsappText = () => {
             const data = details.value;
+            console.log(data);
             let text = null;
             if(data){
-                text = `%2A+-----+%2ADetalle+del+Pedido+Nro.+${data.payment.id}%2A+-----+%2A+%0A`;
+                text = `%2A+-----+%2ADetalle+del+Pedido+Nro.+${data.order.id}%2A+-----+%2A+%0A`;
                 if(data.products){
                     for(let product of data.products){
                         text = text+`%0A%2A${product.quantity}+x+${product.product.name}%2A+$${product.variation.price}.00+Cada+Uno/a`;
@@ -147,13 +147,6 @@ export default {
                     text = text+`%0AEstado:+%2A${data.address.parish.state.name}%2A`;
                     text = text+`%0AParroquia:+%2A${data.address.parish.name}%2A`;
                     text = text+`%0AMunicipio:+%2A${data.address.parish.municipality.name}%2A`;           
-                }
-                text = text+`%0A%0A%2A+-----+%2AInformación+del+Pago%2A+-----+%2A+%0A`;
-                if(data.payment){
-                    text = text+`%0ABanco+de+origen:+%2A${data.payment.destination}%2A`;
-                    text = text+`%0ATitular+de+la+cuenta:+%2A${data.payment.owner}%2A`; 
-                    text = text+`%0AReferencia:+%2A${data.payment.reference}%2A`; 
-                    text = text+`%0AFecha:+%2A${data.payment.date}%2A`;        
                 }
             }
             return text;

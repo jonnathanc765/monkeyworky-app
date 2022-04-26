@@ -145,7 +145,7 @@
       </div>
       <button
         @click="showList"
-        class="background-yellow btn-new-message cursor-pointer"
+        class="background-yellow btn-new-message cursor-pointer color-text-dark-gray"
       >
         <i class="bi bi-chat-square-dots is-size-4"></i>
       </button>
@@ -215,11 +215,11 @@
           <div
             v-for="item in messages"
             :key="item.id"
-            class="column is-12 is-12-mobile is-block message-div"
+            class="column is-12 is-12-mobile is-block message-div color-text-dark-gray"
             :class="item.send_id !== auth.id ? 'message-from' : 'message-to'"
           >
             <div
-              class="label-message"
+              class="label-message color-text-dark-gray"
               :class="
                 item.send_id !== auth.id
                   ? 'label-message-from'

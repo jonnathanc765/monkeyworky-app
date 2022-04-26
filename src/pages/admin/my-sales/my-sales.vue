@@ -104,7 +104,7 @@
                       >
                         <img
                           :src="
-                            `${$env.url}/storage/icons-sky/icons/tracking-de-pedidos.png`
+                            `${$env.url}/storage/icons-sky/icons/tracking-de-pedidos2.png`
                           "
                           alt=""
                           style="width: 35px; height: auto"

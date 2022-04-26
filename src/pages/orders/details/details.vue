@@ -38,46 +38,6 @@
             >
               {{ text(details.order.status) }}
             </h5>
-
-            <span
-              class="column is-10 mt-5 is-size-7 has-text-weight-bold color-text-dark-gray"
-              >INFORMACIÓN DE PAGO</span
-            >
-            <hr class="mt-1 mb-4 hr-black" />
-
-            <div v-for="(item, index) in content" :key="index">
-              <div
-                class="columns is-mobile has-text-centered color-text-dark-gray"
-              >
-                <span
-                  class="column is-6 is-6-mobile is-size-6 is-size-7-mobile has-text-weight-bold"
-                  >{{ returnName(item.name) }}</span
-                >
-                <span
-                  class="column is-6 is-6-mobile is-size-6 is-size-7-mobile"
-                >
-                  <a
-                    v-if="
-                      item.name === 'Comprobante de pago' &&
-                        returnData(details, item.name)
-                    "
-                    target="__blank"
-                    :href="
-                      `${$env.url}/storage/${returnData(details, item.name)}`
-                    "
-                    >Ver comprobante</a
-                  >
-                  {{
-                    item.name === 'Monto'
-                      ? $round(returnData(details, item.name))
-                      : item.name === 'Comprobante de pago'
-                      ? ''
-                      : returnData(details, item.name)
-                  }}</span
-                >
-              </div>
-              <hr class="mt-4 mb-4 hr-black" />
-            </div>
           </div>
         </div>
       </div>

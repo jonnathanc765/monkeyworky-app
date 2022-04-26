@@ -56,7 +56,7 @@
         <img
           @click="confirmCopyText(item)"
           class="column is-3 icon-copy-pays mr-5 cursor-pointer"
-          :src="`${$env.url}/storage/icons-sky/icons/paper.png`"
+          :src="`${$env.url}/storage/icons-sky/icons/paper.svg`"
           alt="icon copy"
         />
       </div>
