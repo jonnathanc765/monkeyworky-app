@@ -97,6 +97,8 @@ export default {
             });
         };
 
+        
+
         const actionPagination = async (action: { type: string, value: number }) => {
 
             isActive.value = true;

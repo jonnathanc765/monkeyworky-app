@@ -21,7 +21,7 @@
         </div>
         <div class="is-flex is-justify-content-center is-align-items-center">
           <div
-            class="column is-10-widescreen is-10-desktop is-10-tablet is-11-mobile card"
+            class="column is-11-widescreen is-11-desktop is-10-tablet is-11-mobile card"
           >
             <div class="card-header background-yellow is-block py-2">
               <h6
@@ -39,8 +39,12 @@
                   text-align: left !important;
                 "
                 >
-                  <span class="text-monserrat text-bold" style="text-align:left; margin-top: 15px !important;">AGREGAR NUEVO BANCO</span>
-                  <ButtonAdmin @click="addBank"></ButtonAdmin>
+                  <span 
+                  class="text-monserrat text-bold" 
+                  style="text-align:left; margin-top: 15px !important; margin-right: 25px !important;">
+                    AGREGAR NUEVO BANCO
+                  </span>
+                  <ButtonAdmin @click="addBank" ></ButtonAdmin>
                 </button>
               </h6>
             </div>
@@ -80,22 +84,22 @@
                   </thead>
                   <tbody class="color-gray is-size-7">
                     <tr v-for="row in banks" :key="row.id">
-                      <td class="py-5 is-600 px-1  text-dark text-monserrat" style="min-width: 130px">
+                      <td class="py-2 is-600 px-1  text-dark text-monserrat" style="min-width: 130px">
                         {{ row.name }}
                       </td>
-                      <td class="py-5 is-600 px-1  text-dark text-monserrat" style="min-width: 150px">
+                      <td class="py-2 is-600 px-1  text-dark text-monserrat" style="min-width: 130px">
                         {{ row.account_number }}
                       </td>
-                      <td class="py-5 is-600 px-1  text-dark text-monserrat" style="min-width: 150px">
+                      <td class="py-2 is-600 px-1  text-dark text-monserrat" style="min-width: 150px">
                         {{ row.owner }}
                       </td>
-                      <td class="py-5 is-600 px-1  text-dark text-monserrat" style="min-width: 130px">
+                      <td class="py-2 is-600 px-1  text-dark text-monserrat" style="min-width: 130px">
                         {{ row.email }}
                       </td>
-                      <td class="py-5 is-600 px-1  text-dark text-monserrat" style="min-width: 120px">
+                      <td class="py-2 is-600 px-1  text-dark text-monserrat" style="min-width: 120px">
                         {{ row.phone }}
                       </td>
-                      <td class="py-5 is-600 px-1  text-dark text-monserrat" style="min-width: 130px">
+                      <td class="py-2 is-600 px-1  text-dark text-monserrat" style="min-width: 130px">
                         {{ row.dni }}
                       </td>
                       <td class="py-5 is-600 px-1  text-dark text-monserrat" style="min-width: 180px">

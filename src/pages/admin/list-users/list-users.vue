@@ -15,7 +15,7 @@
       </h1>
       <div class="is-flex is-justify-content-center is-align-items-center">
         <div
-          class="column is-10-widescreen is-10-desktop is-11-tablet is-11-mobile card"
+          class="column is-11-widescreen is-11-desktop is-11-tablet is-11-mobile card"
         >
           <div class="card-header background-yellow is-block py-2">
             <!-- <h6 class="has-text-centered has-text-white">
@@ -34,7 +34,7 @@
 
               <h1
                 v-if="people.length === 0 && !isActive"
-                class="is-size-5 color-red is-size-5-mobile py-4"
+                class="is-size-5 color-red is-size-5-mobile py-2"
               >
                 No se encontraron clientes registrados
               </h1>
@@ -44,30 +44,30 @@
               >
                 <thead>
                   <tr class="gradient-gray">
-                    <th class="py-5 has-text-white text-monserrat">Fecha</th>
-                    <th class="py-5 has-text-white text-monserrat">Nombres y Apellidos</th>
-                    <th class="py-5 has-text-white text-monserrat">Correo</th>
-                    <th class="py-5 has-text-white text-monserrat">Teléfono</th>
-                    <th class="py-5 has-text-white text-monserrat">Ciudad</th>
-                    <th class="py-5 has-text-white text-monserrat" style="min-width: 300px">Dirección</th>
+                    <th class="py-2 has-text-white text-monserrat">Fecha</th>
+                    <th class="py-2 has-text-white text-monserrat">Nombres y Apellidos</th>
+                    <th class="py-2 has-text-white text-monserrat">Correo</th>
+                    <th class="py-2 has-text-white text-monserrat">Teléfono</th>
+                    <th class="py-2 has-text-white text-monserrat">Ciudad</th>
+                    <th class="py-2 has-text-white text-monserrat" style="min-width: 300px">Dirección</th>
                   </tr>
                 </thead>
                 <tbody class="color-gray">
                   <tr v-for="row in people" :key="row.people_id">
-                    <td class="p-5 is-600 text-monserrat" style="white-space: nowrap">
+                    <td class="p-2 is-600 text-monserrat" style="white-space: nowrap">
                       {{ dateParse(row.created_at) }}
                     </td>
-                    <td class="p-5 is-600 text-monserrat" style="white-space: nowrap">
+                    <td class="p-2 is-600 text-monserrat" style="white-space: nowrap">
                       {{ row.firstname }} {{ row.lastname }}
                     </td>
-                    <td class="p-5 is-600 text-monserrat">
+                    <td class="p-2 is-600 text-monserrat">
                       {{ row.email }}
                     </td>
-                    <td class="p-5 is-600 text-monserrat" style="white-space: nowrap">
+                    <td class="p-2 is-600 text-monserrat" style="white-space: nowrap">
                       {{ row.phone ? row.phone : '' }}
                     </td>
-                    <td class="p-5 is-600 text-monserrat">Barquisimeto</td>
-                    <td class="p-5 is-600 text-monserrat" style="min-width: 300px">
+                    <td class="p-2 is-600 text-monserrat">Barquisimeto</td>
+                    <td class="p-2 is-600 text-monserrat" style="min-width: 300px">
                       <p class="pb-0">
                         {{ row.address }}
                       </p>

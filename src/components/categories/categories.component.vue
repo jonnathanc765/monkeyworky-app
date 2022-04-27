@@ -1,26 +1,26 @@
 <template>
     <li class="div-categories has-text-white is-size-7">
-      <div v-if="item.subcategories.length === 0" @click="category" >
-            <div class="icon-box">
+      <div v-if="item.subcategories.length === 1" @click="category" >
+            <div class="icon-box mt-2">
               <img 
                 :src="`${$env.url}/storage/${item.picture}`"
                 class="category-icon cursor-pointer d-block"
               >
             </div>
 
-            <p class="is-uppercase" @click="category" >
+            <p @click="category" >
               {{ item.name }}
             </p>
       </div>
       <div v-else @click="openCategory">
-            <div class="icon-box">
+            <div class="icon-box mt-2">
               <img 
                 :src="`${$env.url}/storage/${item.picture}`"
                 class="category-icon cursor-pointer d-block"
               >
             </div>
 
-            <p class="is-uppercase">
+            <p>
               {{ item.name }}
             </p>
       </div>
