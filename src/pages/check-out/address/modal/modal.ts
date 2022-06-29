@@ -115,6 +115,7 @@ export default {
         const addAddress = () => {
             disabled.value = true;
             addressStore.dispatch('post', { parish: parish.value, ...form.value }).then((res) => {
+                console.log(res);
                 alertBulma('warning', 'Registro de dirección', 'Se añadió satisfactoriamente la dirección en la base de datos');
                 dismiss();
             }).catch((error) => {

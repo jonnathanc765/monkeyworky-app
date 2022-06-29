@@ -16,21 +16,8 @@
 
     <ModalProducts :item="item"></ModalProducts>
     <!-- <b-icon-shop /> -->
-    <!-- BANNER AND CATEGORIES -->
+    <!-- BANNER  -->
     <div class="class-header gradient-gray background-monkeys mb-6">
-      <!-- CATEGORIES -->
-      <div class="category column is-12" style="max-width: 800px; margin:auto;" id="myCategory">
-        <ul class="category-scrollbar pt-2 m-auto">
-          <CategoriesComponent
-            v-for="(item, index) in categories"
-            :key="index"
-            :item="item"
-            v-on:headerCategory="filterCategory(item.id)"
-            v-on:headerSubCategory="selectSubcategory"
-            v-on:openCategory="openCategory"
-          ></CategoriesComponent>
-        </ul>
-      </div>
       <!-- BANNER -->
       <div class="column is-full-desktop is-hidden-mobile">
         <BannerComponent></BannerComponent>
@@ -47,6 +34,20 @@
           class="is-align-items-center is-inline-block"
         ></CardComponent>
       </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="category column is-12" style="max-width: 800px; margin:auto;" id="myCategory">
+      <ul class="category-scrollbar pt-2 m-auto">
+        <CategoriesComponent
+          v-for="(item, index) in categories"
+          :key="index"
+          :item="item"
+          v-on:headerCategory="filterCategory(item.id)"
+          v-on:headerSubCategory="selectSubcategory"
+          v-on:openCategory="openCategory"
+        ></CategoriesComponent>
+      </ul>
     </div>
 
     <!-- PRODUCTS -->

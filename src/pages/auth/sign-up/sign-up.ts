@@ -121,9 +121,14 @@ export default {
         const signIn = async () => {
             await authStore.dispatch('signIn', form.value).then((res) => {
                 registerProducts();
+                console.log(productsLocal.value.lengtj);
+                if(productsLocal.value.length > 0){
+                    router.push('/shopping-cart');
+                } else {
+                    router.push('/home');
+                }
                 spinner.value = false;
                 alertBulma('warning', 'Registro exítoso', 'Se ha completado el registro satisfactoriamente, serás llevado a la página principal en breve');
-                router.push('/');
             }).catch((error) => {
                 spinner.value = false;
                 alertBulma('warning', 'Error al iniciar sesión', 'El registro fue exitoso, pero tuvimos problemas para iniciar sesión, debes iniciar sesión manualmente');
