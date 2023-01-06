@@ -31,7 +31,10 @@
                 v-show="route.name !== 'registerPayment' && isActive"
                 class="column control is-12 is-flex is-justify-content-center is-align-items-center class-products pb-5 "
               >
-                <span class="column is-4 has-text-left has-text-white text-monserrat">Buscar por</span>
+                <span
+                  class="column is-4 has-text-left has-text-white text-monserrat"
+                  >Buscar por</span
+                >
                 <div class="select control pr-1 column is-4">
                   <select
                     class="pr-6 control w-100 pl-3 text-monserrat"
@@ -72,15 +75,51 @@
               >
                 <thead>
                   <tr class="gradient-gray">
-                    <th class="pt-5 pb-5 has-text-white text-monserrat" style="min-width: 80px"></th>
-                    <th class="pt-5 pb-5 has-text-white text-monserrat" style="min-width: 200px">Estatus</th>
-                    <th class="pt-5 pb-5 has-text-white text-monserrat" style="min-widht: 100px">Número</th>
-                    <th class="pt-5 pb-5 has-text-white text-monserrat" style="min-widht: 130px">Fecha</th>
-                    <th class="pt-5 pb-5 has-text-white text-monserrat">Método de pago</th>
-                    <th class="pt-5 pb-5 has-text-white text-monserrat" style="min-widht: 150px">Tipo de envío</th>
-                    <th class="pt-5 pb-5 has-text-white text-monserrat" style="min-widht: 130px">Monto</th>
-                    <th class="pt-5 pb-5 has-text-white text-monserrat" style="min-width: 50px"></th>
-                    <th class="pt-5 pb-5 has-text-white text-monserrat" style="min-width: 50px"></th>
+                    <th
+                      class="pt-5 pb-5 has-text-white text-monserrat"
+                      style="min-width: 80px"
+                    ></th>
+                    <th
+                      class="pt-5 pb-5 has-text-white text-monserrat"
+                      style="min-width: 200px"
+                    >
+                      Estatus
+                    </th>
+                    <th
+                      class="pt-5 pb-5 has-text-white text-monserrat"
+                      style="min-widht: 100px"
+                    >
+                      Número
+                    </th>
+                    <th
+                      class="pt-5 pb-5 has-text-white text-monserrat"
+                      style="min-widht: 130px"
+                    >
+                      Fecha
+                    </th>
+                    <th class="pt-5 pb-5 has-text-white text-monserrat">
+                      Método de pago
+                    </th>
+                    <th
+                      class="pt-5 pb-5 has-text-white text-monserrat"
+                      style="min-widht: 150px"
+                    >
+                      Tipo de envío
+                    </th>
+                    <th
+                      class="pt-5 pb-5 has-text-white text-monserrat"
+                      style="min-widht: 130px"
+                    >
+                      Monto
+                    </th>
+                    <th
+                      class="pt-5 pb-5 has-text-white text-monserrat"
+                      style="min-width: 50px"
+                    ></th>
+                    <th
+                      class="pt-5 pb-5 has-text-white text-monserrat"
+                      style="min-width: 50px"
+                    ></th>
                   </tr>
                 </thead>
                 <tbody class="color-gray">
@@ -114,7 +153,7 @@
                         v-if="auth.role === 'admin'"
                         class="border-blue mx-2 px-2 cursor-pointer non-selectable"
                         @click="
-                          isChange = true
+                          isChange = true;
                           row = item;
                         "
                         >Cambiar</span

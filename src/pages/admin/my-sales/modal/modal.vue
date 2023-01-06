@@ -2,7 +2,7 @@
   <div id="modal-my-sales" class="modal modal-products">
     <div class="modal-background"></div>
     <div class="column modal-my-sales is-7 is-11-mobile modal-card">
-      <header class="modal-card-head background-red">
+      <header class="modal-card-head background-yellow">
         <p class="modal-card-title has-text-white">Registrar pago</p>
         <button @click="dismiss" class="delete" aria-label="close"></button>
       </header>
@@ -23,7 +23,7 @@
         <button
           @click="addPay"
           :disabled="disabled"
-          class="button column is-3 is-8-mobile gradient-button-red has-text-white"
+          class="button column is-3 is-8-mobile background-yellow has-text-white"
         >
           Añadir pago
         </button>

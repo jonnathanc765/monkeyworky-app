@@ -1,5 +1,6 @@
 <template>
   <Modal v-if="isModal" v-on:dismissForm="dismissForm"></Modal>
+  <ModalProducts v-on:addQuantity="updateQuantity" :item="item"></ModalProducts>
   <div
     class="column is-12 gradient-gray background-monkeys div-shopping-cart is-block-mobile is-flex-desktop is-justify-content-space-between is-block-tablet"
   >
@@ -21,7 +22,12 @@
         class="py-6"
       ></SpinnerComponent>
 
-      <Products :products="products" order="true" :cart="true"></Products>
+      <Products
+        v-on:getItem="getData"
+        :products="products"
+        order="true"
+        :cart="true"
+      ></Products>
     </div>
 
     <!-- INFO -->
@@ -39,7 +45,9 @@
                 : row.name
             }}
           </h5>
-          <h5 class=" is-size-6 is-size-7-mobile has-text-weight-bold text-monserrat">
+          <h5
+            class=" is-size-6 is-size-7-mobile has-text-weight-bold text-monserrat"
+          >
             {{ row.name !== 'Productos' && row.name !== 'Items' ? '$' : '' }}
             {{ $round(this[$lowerCase(row.name)]) }}
           </h5>

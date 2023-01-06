@@ -4,7 +4,9 @@
     v-if="isModal"
     v-on:dismissForm="isModal = false"
   ></Modal>
-  <div class="column gradient-gray background-monkeys is-12 column is-12-mobile is-12-tablet p-2 pb-4">
+  <div
+    class="column gradient-gray background-monkeys is-12 column is-12-mobile is-12-tablet p-2 pb-4"
+  >
     <h2 class="is-size-4 is-size-4-mobile color-text-white mt-4">
       Mi perfil
     </h2>
@@ -23,7 +25,7 @@
             type="email"
             v-model="form.email"
             disabled
-            class=" pt-4 pb-1 has-text-weight-light is-size-6 input-border-yellow color-text-white"
+            class="pt-4 pb-1 has-text-weight-light is-size-6 input-border-yellow color-text-white"
             placeholder="Ingresa la nueva contraseña"
           />
           <div class="focus-line"></div>
@@ -45,7 +47,6 @@
           <div class="focus-line"></div>
         </div>
       </div>
-
     </div>
 
     <div
@@ -125,12 +126,11 @@
         </div>
       </div>
     </div>
-    
+
     <div
       class="column is-12 is-flex-desktop is-justify-content-space-between px-5"
     >
-     <div class="column is-12-mobile is-5-desktop is-5-tablet">
-      </div>
+      <div class="column is-12-mobile is-5-desktop is-5-tablet"></div>
       <div class="column is-12-mobile is-5-desktop is-5-tablet">
         <button
           @click="changeData()"

@@ -11,7 +11,10 @@
 
     <!-- ITEMS -->
 
-    <div class="column is-12" :class="cart ? '' : ['max-products', 'overflow-items']">
+    <div
+      class="column is-12"
+      :class="cart ? '' : ['max-products', 'overflow-items']"
+    >
       <div v-for="item in products" :key="item.id">
         <div class="column is-12 is-12-mobile mt-4 box-shadow-check p-2">
           <div class="is-flex is-relative">
@@ -28,7 +31,7 @@
             >
               <!-- COLUMN 1 -->
               <div
-                class="column is-10 is-flex color-text-dark-gray is-align-items-center"
+                class="column is-10  is-9-mobile is-flex color-text-dark-gray is-align-items-center"
               >
                 <span
                   v-for="(row, index) in [1, 2, 3]"
@@ -39,7 +42,9 @@
                 </span>
               </div>
               <!-- COLUMN 2 -->
-              <div class="column p-2 mt-2  is-10 is-flex color-text-dark-gray">
+              <div
+                class="column p-2 mt-2 is-10 is-9-mobile is-flex color-text-dark-gray"
+              >
                 <span
                   v-for="(row, index) in [1, 2, 3]"
                   :key="index"
@@ -50,6 +55,31 @@
               </div>
             </div>
             <div v-if="cart" class="delete-item-cart is-justify-content-center">
+              <span
+                class="column is-4 is-size-6 is-size-7-mobile has-text-weight-bold has-text-centered"
+              >
+                Acciones
+              </span>
+              <button
+                :disabled="disabled[item.variation.id] > 1"
+                :id="`delete-item-${item.variation.id}`"
+                :class="disabled[item.variation.id] > 1 ? 'is-loading' : ''"
+                @click="addCart(item)"
+                type="button"
+                class="button is-12 column background-yellow is-flex is-align-items-center"
+                style="margin-bottom:5px !important"
+              >
+                <span class="icon ">
+                  <i
+                    :id="`icon-edit-${item.variation.id}`"
+                    :class="
+                      disabled[item.variation.id] > 1 ? '' : 'bi bi-pencil'
+                    "
+                    class="icon-header has-text-white is-size-5-desktop is-size-6-mobile is-size-6-tablet"
+                  ></i>
+                </span>
+              </button>
+
               <button
                 :disabled="disabled[item.variation.id] > 1"
                 :id="`delete-item-${item.variation.id}`"
@@ -58,7 +88,7 @@
                 type="button"
                 class="button column is-12 background-outside is-flex is-align-items-center"
               >
-                <span class="icon">
+                <span class="icon ">
                   <i
                     :id="`icon-delete-${item.variation.id}`"
                     :class="

@@ -4,7 +4,13 @@
       @click="toggleSidebar"
       class="is-flex is-justify-content-center is-align-items-center is-hidden-desktop btn-menu-tablet"
     >
-      <i :class="[toggled === true ? 'bi bi-list has-text-white is-size-2' : 'bi bi-x has-text-white is-size-2']"></i>
+      <i
+        :class="[
+          toggled === true
+            ? 'bi bi-list has-text-white is-size-2'
+            : 'bi bi-x has-text-white is-size-2',
+        ]"
+      ></i>
     </button>
     <div class="column is-8">
       <div id="sidebar-wrapper">
@@ -16,7 +22,13 @@
             class="is-justify-content-center is-align-items-center h-100 w-100 is-hidden-mobile is-hidden-desktop is-flex-desktop btn-menu-desktop"
             style="background:none;border:none;cursor:pointer"
           >
-            <i :class="[toggled === true ? 'bi bi-list has-text-white is-size-2' : 'bi bi-x has-text-white is-size-2']"></i>
+            <i
+              :class="[
+                toggled === true
+                  ? 'bi bi-list has-text-white is-size-2'
+                  : 'bi bi-x has-text-white is-size-2',
+              ]"
+            ></i>
           </button>
         </div>
         <div class="icon-list" @mouseenter="handleEvent">
@@ -86,7 +98,7 @@
                       list.customerMarginTopNonSelected,
                     customerMarginTopNonSelectedTracking:
                       activeMenuItem !== list.name &&
-                      list.customerMarginTopNonSelectedTracking
+                      list.customerMarginTopNonSelectedTracking,
                   }"
                   class="
                   main-list-title
@@ -126,7 +138,7 @@
                         selected:
                           list.subMenu === 'isArray'
                             ? subMenu.id === categorySelected
-                            : route.name === subMenu.name
+                            : route.name === subMenu.name,
                       }"
                     >
                       <a
@@ -148,7 +160,8 @@
                   </div>
                   <ul
                     v-if="
-                      categorySelected === subMenu.id &&
+                      list.subMenu.length > 0 &&
+                        categorySelected === subMenu.id &&
                         list.subMenu === 'isArray'
                     "
                   >
@@ -158,10 +171,10 @@
                       class="is-flex ml-4 has-text-left"
                     >
                       <a
-                        @click="selectSubcategory(subcategory.id);"
+                        @click="selectSubcategory(subcategory.id)"
                         class="has-text-weight-bold my-1 mr-4"
                         :class="{
-                          selected: subCategorySelected == subcategory.id
+                          selected: subCategorySelected == subcategory.id,
                         }"
                         href="javascript:void(0)"
                       >
@@ -192,49 +205,49 @@
 </template>
 
 <script>
-import { categoriesStore } from '@/store/categories'
-import { utilitiesStore } from '@/store/utilities'
-import { productStore } from '@/store/product'
-import { animationScroll } from '@/core/global/animation'
-import { useStore } from 'vuex'
-import { computed, ref } from '@vue/runtime-core'
-import { useRoute, useRouter } from 'vue-router'
-import { defineAsyncComponent } from 'vue'
-import menu_user from '@/core/data/menu_user.json'
-import menu_admin from '@/core/data/menu_admin.json'
-import list_user from '@/core/data/list_user.json'
-import list_admin from '@/core/data/list_admin.json'
+import { categoriesStore } from '@/store/categories';
+import { utilitiesStore } from '@/store/utilities';
+import { productStore } from '@/store/product';
+import { animationScroll } from '@/core/global/animation';
+import { useStore } from 'vuex';
+import { computed, ref } from '@vue/runtime-core';
+import { useRoute, useRouter } from 'vue-router';
+import { defineAsyncComponent } from 'vue';
+import menu_user from '@/core/data/menu_user.json';
+import menu_admin from '@/core/data/menu_admin.json';
+import list_user from '@/core/data/list_user.json';
+import list_admin from '@/core/data/list_admin.json';
 
 export default {
   components: {
     FooterComponent: defineAsyncComponent(() =>
       import('@/components/footer/footer.component.vue')
-    )
+    ),
   },
-  setup () {
-    const authStore = useStore()
-    const route = useRoute()
-    const router = useRouter()
-    const categoryIdFooter = ref(0)
+  setup() {
+    const authStore = useStore();
+    const route = useRoute();
+    const router = useRouter();
+    const categoryIdFooter = ref(0);
 
     const auth = computed(() => {
-      return authStore.state.auth
-    })
+      return authStore.state.auth;
+    });
 
-    const getFooterId = data => {
-      categoryIdFooter.value = data
-    }
+    const getFooterId = (data) => {
+      categoryIdFooter.value = data;
+    };
 
-    const filterCategory = async id => {
+    const filterCategory = async (id) => {
       if (route.name === 'home') {
-        animationScroll('#div-products', document)
+        animationScroll('#div-products', document);
         await productStore.dispatch('getProducts', {
-          filter: { category: id }
-        })
+          filter: { category: id },
+        });
       } else {
-        router.push(`/home?category=${id}`)
+        router.push(`/home?category=${id}`);
       }
-    }
+    };
     return {
       auth,
       route,
@@ -244,74 +257,74 @@ export default {
       menu_user,
       menu_admin,
       list_user,
-      list_admin
-    }
+      list_admin,
+    };
   },
-  data () {
+  data() {
     return {
       toggled: true,
       keyword: '',
       calcHeight: '0px',
       categorySelected: 0,
-      subCategorySelected: 0
-    }
+      subCategorySelected: 0,
+    };
   },
   computed: {
-    activeMenuItem () {
-      return utilitiesStore.state.activeMenuItem
+    activeMenuItem() {
+      return utilitiesStore.state.activeMenuItem;
     },
-    categories () {
-      return categoriesStore.state.categories
+    categories() {
+      return categoriesStore.state.categories;
     },
-    height () {
-      return utilitiesStore.state.headerHeight
-    }
+    height() {
+      return utilitiesStore.state.headerHeight;
+    },
   },
-  mounted () {
-    this.calcHeight = `calc(100vh - ${this.height}px)`
+  mounted() {
+    this.calcHeight = `calc(100vh - ${this.height}px)`;
     this.$watch(
       () => {
-        return this.height
+        return this.height;
       },
-      val => {
-        this.calcHeight = `calc(100vh - ${val}px)`
+      (val) => {
+        this.calcHeight = `calc(100vh - ${val}px)`;
       }
-    )
+    );
   },
 
   methods: {
-    toggleSidebar () {
-      this.toggled = !this.toggled
-      utilitiesStore.commit('setToggled', this.toggled)
+    toggleSidebar() {
+      this.toggled = !this.toggled;
+      utilitiesStore.commit('setToggled', this.toggled);
     },
-    changeActive (value) {
-      utilitiesStore.commit('setActiveMenu', value)
+    changeActive(value) {
+      utilitiesStore.commit('setActiveMenu', value);
     },
-    selectCategory (id) {
-      this.categorySelected = id
+    selectCategory(id) {
+      this.categorySelected = id;
     },
-    async selectSubcategory (id) {
+    async selectSubcategory(id) {
       this.toggleSidebar();
-      this.subCategorySelected = id
+      this.subCategorySelected = id;
       await productStore
         .dispatch('getProducts', { filter: { subCategory: id } })
-        .finally(() => {})
-      animationScroll('#div-products', document)
+        .finally(() => {});
+      animationScroll('#div-products', document);
     },
-    handleEvent (event) {
+    handleEvent(event) {
       if (screen.width > 1100) {
         if (event.type === 'mouseleave') {
-          this.toggled = !this.toggled
-          utilitiesStore.commit('setToggled', this.toggled)
+          this.toggled = !this.toggled;
+          utilitiesStore.commit('setToggled', this.toggled);
         }
         if (event.type === 'mouseenter') {
-          this.toggled = true
-          utilitiesStore.commit('setToggled', this.toggled)
+          this.toggled = true;
+          utilitiesStore.commit('setToggled', this.toggled);
         }
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

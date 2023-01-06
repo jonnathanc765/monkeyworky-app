@@ -3,7 +3,9 @@
     <div class="modal-background"></div>
     <div class="column is-6 is-11-mobile modal-card">
       <header class="modal-card-head background-yellow">
-        <p class="modal-card-title has-text-white text-monserrat text-bold">{{(item.name) ? 'Actualizar producto' : 'Agregar un nuevo producto'}}</p>
+        <p class="modal-card-title has-text-white text-monserrat text-bold">
+          {{ item.name ? 'Actualizar producto' : 'Agregar un nuevo producto' }}
+        </p>
         <button @click="dismiss" class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body p-4">
@@ -14,7 +16,9 @@
             <div
               class="column control is-12 is-flex-desktop is-flex-tablet is-block-mobile is-is-justify-content-center is-align-items-center py-2"
             >
-              <span class="column is-4 has-text-left text-monserrat">Nombre del producto</span>
+              <span class="column is-4 has-text-left text-monserrat"
+                >Nombre del producto</span
+              >
               <input
                 v-model="form.name"
                 class="input column is-8 is-normal"
@@ -27,7 +31,9 @@
             <div
               class="column control is-12 is-flex-desktop is-flex-tablet is-block-mobile is-is-justify-content-center is-align-items-center py-2 class-products"
             >
-              <span class="column control is-4 has-text-left text-monserrat">Categoría</span>
+              <span class="column control is-4 has-text-left text-monserrat"
+                >Categoría</span
+              >
               <div class="select control pr-1 column is-8 is-size-12-mobile">
                 <select
                   class="pr-6 control w-100 pl-3"
@@ -41,7 +47,9 @@
                     :key="row.id"
                     :value="row.id"
                     :selected="
-                      item.sub_category ? item.sub_category.category.id === row.id : false
+                      item.sub_category
+                        ? item.sub_category.category.id === row.id
+                        : false
                     "
                     >{{ row.name }}</option
                   >
@@ -181,7 +189,7 @@
           @click="addProduct"
           class="button column is-3 is-8-mobile background-yellow text-dark"
         >
-          {{ (item.name) ? 'Actualizar' : 'Agregar'}}
+          {{ item.name ? 'Actualizar' : 'Agregar' }}
         </button>
       </footer>
     </div>

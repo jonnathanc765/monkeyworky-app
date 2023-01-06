@@ -5,6 +5,7 @@ import alertBulma, { alertConfirmationBulma } from '../../core/global/alert';
 import { useRouter } from 'vue-router';
 import { utilitiesStore } from '../../store/utilities';
 import { useStore } from 'vuex';
+import { removeClassValidation } from '../../core/global/validation';
 
 export default {
   name: 'Cart',
@@ -16,6 +17,9 @@ export default {
       import('@/pages/check-out/products/products.vue')
     ),
     Modal: defineAsyncComponent(() => import('@/pages/cart/modal/modal.vue')),
+    ModalProducts: defineAsyncComponent(() =>
+      import('@/components/modal-products/modal-products.vue')
+    ),
   },
   setup() {
     const infoPrice = ref([
@@ -49,6 +53,10 @@ export default {
     const infoCart = ref(['', 'Cantidad', 'Precio', 'Variación']);
 
     onMounted(async () => {
+      uploadProducts();
+    });
+
+    const uploadProducts = async () => {
       if (authStore.getters.isAuth) {
         await cartStore
           .dispatch('getCartApi')
@@ -70,7 +78,7 @@ export default {
       }
 
       cartStore.dispatch('values');
-    });
+    };
 
     const products = computed(() => {
       return cartStore.state.products;
@@ -86,6 +94,7 @@ export default {
 
     const productos = ref(0);
     const items = ref(0);
+    const item = ref(0);
 
     const subtotal = computed(() => {
       return cartStore.state.subtotal;
@@ -110,7 +119,6 @@ export default {
     };
 
     const pay = () => {
-      console.log(products.value);
       const generar = generateWhatsappText(products.value, subtotal.value);
       if (authStore.getters.isAuth) {
         if (authStore.state.auth.people.phone) {
@@ -158,6 +166,15 @@ export default {
       isModal.value = false;
     };
 
+    const getData = (data: any) => {
+      console.log('recibiendo datos en carts', data);
+      item.value = data;
+    };
+
+    const updateQuantity = (data: boolean) => {
+      uploadProducts();
+    };
+
     const generateWhatsappText = (req: any, subtotal: any) => {
       const data = req;
       let text = '';
@@ -181,10 +198,13 @@ export default {
       iva,
       total,
       pay,
+      updateQuantity,
       isActive,
       productos,
       calcTotalProduct,
       items,
+      item,
+      getData,
       isModal,
       dismissForm,
       totalusd,

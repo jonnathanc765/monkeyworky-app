@@ -13,7 +13,6 @@
   width: 100%;
   z-index: 10;
   animation: aparecer .5s ease-in-out;
-  
 }
 
 @keyframes aparecer{
@@ -69,6 +68,10 @@
   font-style: oblique !important;
   font-weight: bold !important;
   cursor: pointer !important;
+}
+
+.page-content-wrapper{
+  background-color: $color_yellow;
 }
 
 

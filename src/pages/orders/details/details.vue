@@ -7,7 +7,15 @@
     class="py-6"
   ></SpinnerComponent>
   <Modal v-if="modal" :item="item" v-on:dismissForm="dismissForm"></Modal>
-  <div v-if="details.order && !isActive" class="gradient-gray background-monkeys">
+  <ModalPayment
+    v-on:dismissForm="dismissFormPayment"
+    :id="itemId"
+    :amount="itemValue"
+  ></ModalPayment>
+  <div
+    v-if="details.order && !isActive"
+    class="gradient-gray background-monkeys"
+  >
     <div
       class="column div-shopping-cart is-block-mobile is-justify-content-space-between pt-4"
     >
@@ -37,16 +45,35 @@
               class="is-size-6 is-mobile is-size-7-mobile has-text-centered color-text-gray"
             >
               {{ text(details.order.status) }}
+              <button
+                @click="
+                  details.order.status != 'pending_for_payment' ||
+                  payment === true
+                    ? ''
+                    : openModal(details.order.id, details.order.total)
+                "
+                class="button w-100 m-auto mt-2 column is-3 is-8-mobile background-yellow  has-text-white"
+                style="max-width:350px !important;"
+                :disabled="
+                  details.order.status != 'pending_for_payment' ||
+                    payment === true
+                "
+              >
+                {{
+                  details.order.status != 'pending_for_payment' ||
+                  payment === true
+                    ? 'PAGO AÑADIDO'
+                    : 'ADJUNTAR COMPROBANTE DE PAGO'
+                }}
+              </button>
             </h5>
           </div>
         </div>
       </div>
 
-    
-
       <!-- INFO ADDRESS -->
       <div
-      v-if="details.address"
+        v-if="details.address"
         class="column is-10 is-12-mobile background-gray box-shadow has-text-left h-100 p-0 m-auto"
       >
         <div class="p-5 mt-6">

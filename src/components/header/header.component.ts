@@ -14,11 +14,10 @@ import moment from 'moment';
 export default {
   components: {
     SpinnerComponent: defineAsyncComponent(() =>
-      import('@/components/spinner/spinner.component.vue'),
+      import('@/components/spinner/spinner.component.vue')
     ),
   },
   setup() {
-
     const authStore = useStore();
 
     const auth = computed(() => {
@@ -36,9 +35,18 @@ export default {
     };
 
     const getNotifications = () => {
-      notificationStore.dispatch('get', page.value).catch((error) => {
-        alertBulma('warning', 'Error', 'Hubo un fallo a la hora de cargar las notificaciones');
-      }).then(() => { isActive.value = false; });
+      notificationStore
+        .dispatch('get', page.value)
+        .catch((error) => {
+          alertBulma(
+            'warning',
+            'Error',
+            'Hubo un fallo a la hora de cargar las notificaciones'
+          );
+        })
+        .then(() => {
+          isActive.value = false;
+        });
     };
 
     onMounted(() => {
@@ -58,7 +66,10 @@ export default {
     });
 
     const pagination = (event: any) => {
-      if ((event.target.scrollHeight - event.target.scrollTop) === event.target.clientHeight) {
+      if (
+        event.target.scrollHeight - event.target.scrollTop ===
+        event.target.clientHeight
+      ) {
         page.value = page.value + 1;
         if (notificationStore.state.paginate.meta.last_page >= page.value) {
           isActive.value = true;
@@ -119,11 +130,21 @@ export default {
 
     const searchProduct = async () => {
       if (route.name === 'home') {
-        await productStore.dispatch('getProducts', (search.value !== '') ? { filter: { name: search.value } } : '').then(() => {
-          animationScroll('#div-products', document);
-        }).catch(() => {
-          alertBulma('danger', 'Busqueda de un producto', 'Hubo un problema con el servidor a la hora de buscar un producto');
-        });
+        await productStore
+          .dispatch(
+            'getProducts',
+            search.value !== '' ? { filter: { name: search.value } } : ''
+          )
+          .then(() => {
+            animationScroll('#div-products', document);
+          })
+          .catch(() => {
+            alertBulma(
+              'warning',
+              'Busqueda de un producto',
+              'Hubo un problema con el servidor a la hora de buscar un producto'
+            );
+          });
       } else {
         router.push(`/home?search=${search.value}`);
       }
@@ -140,7 +161,11 @@ export default {
     const view = (row: any) => {
       if (row === 'all') {
         notificationStore.dispatch('viewAll').catch(() => {
-          alertBulma('danger', 'Error', 'Hubo un problema en la comunicación con el servidor');
+          alertBulma(
+            'warning',
+            'Error',
+            'Hubo un problema en la comunicación con el servidor'
+          );
         });
       } else {
         if (!row.view) {
@@ -170,15 +195,32 @@ export default {
                 'warning',
                 'Error',
                 'Lamentablemente no pudimos cerrar la sesión, vuelve a intentarlo',
-                { label: 'Entendido' });
+                { label: 'Entendido' }
+              );
             });
-        },
+        }
       );
     };
 
     const changeCart = () => {
       utilitiesStore.commit('setActiveMenu', 'cart');
     };
-    return { auth, logout, product, viewBtn, el, changeCart, searchProduct, search, router, countNotification, notifications, view, pagination, dateParse, isActive };
+    return {
+      auth,
+      logout,
+      product,
+      viewBtn,
+      el,
+      changeCart,
+      searchProduct,
+      search,
+      router,
+      countNotification,
+      notifications,
+      view,
+      pagination,
+      dateParse,
+      isActive,
+    };
   },
 };

@@ -72,37 +72,37 @@
 </template>
 
 <script>
-import alertBulma from '@/core/global/alert'
-import { bankStore } from '../../../store/bank'
-import { defineAsyncComponent } from '@vue/runtime-core'
+import alertBulma from '@/core/global/alert';
+import { bankStore } from '../../../store/bank';
+import { defineAsyncComponent } from '@vue/runtime-core';
 export default {
   components: {
     SpinnerComponent: defineAsyncComponent(() =>
       import('@/components/spinner/spinner.component.vue')
-    )
+    ),
   },
-  async mounted () {
+  async mounted() {
     await bankStore
       .dispatch('get')
       .catch(() => {
         alertBulma(
-          'danger',
+          'warning',
           'Error',
           'Hubo un problema en la comunicación con el servidor y no se pudieron cargar los bancos, por favor recarga la página'
-        )
+        );
       })
       .finally(() => {
-        this.isActive = false
-      })
+        this.isActive = false;
+      });
   },
 
   computed: {
-    banks () {
-      return bankStore.state.banks
-    }
+    banks() {
+      return bankStore.state.banks;
+    },
   },
   methods: {
-    confirmCopyText (item) {
+    confirmCopyText(item) {
       this.$copyText(
         `${item.name ? item.name : ''}\n${item.owner ? item.owner : ''}\n${
           item.email ? item.email : ''
@@ -116,7 +116,7 @@ export default {
             'Texto copiado',
             'Hemos copiado los datos del banco en su portapapeles.',
             { label: 'Entendido' }
-          )
+          );
         })
         .catch(() => {
           alertBulma(
@@ -124,14 +124,14 @@ export default {
             'Error en la copia',
             'Hubo un error a la hora de copiar el texto.',
             { label: 'Entendido' }
-          )
-        })
-    }
+          );
+        });
+    },
   },
-  data () {
+  data() {
     return {
-      isActive: true
-    }
-  }
-}
+      isActive: true,
+    };
+  },
+};
 </script>

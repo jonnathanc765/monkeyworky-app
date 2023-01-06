@@ -1,13 +1,25 @@
-import { SetupContext } from '@vue/runtime-core';
+import { computed, SetupContext } from '@vue/runtime-core';
+import { useStore } from 'vuex';
+import { addClassValidation } from '../../core/global/validation';
+
 export default {
+  props: ['item'],
+  setup(props: { item: {} }, context: SetupContext) {
+    const dismiss = () => {
+      context.emit('dismiss');
+    };
 
-    props: ['item'],
-    setup(props: { item: {} }, context: SetupContext) {
+    const authStore = useStore();
 
-        const dismiss = () => {
-            context.emit('dismiss');
-        };
+    const addCart = () => {
+      context.emit('getItem', props.item);
+      addClassValidation('#modal-products', ['is-active']);
+    };
 
-        return { dismiss };
-    },
+    const auth = computed(() => {
+      return authStore.state.auth;
+    });
+
+    return { dismiss, addCart, auth };
+  },
 };

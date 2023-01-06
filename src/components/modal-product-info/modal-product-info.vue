@@ -20,7 +20,7 @@
             class="img-product-info"
           />
 
-          <div class="column is-5 mt-6">
+          <div class="column is-5 mt-6 mb-5">
             <span
               class="column is-12 has-text-left ml-2 mt-5 color-text-dark-gray is-uppercase is-size-5 has-text-weight-bold"
               >{{ item.name }}</span
@@ -34,15 +34,13 @@
                 }})
               </span>
             </div>
-          </div>
-
-          <div class="column is-5 mt-6 pl-2 pr-2">
-            <span
-              class="column is-12 color-text-dark-gray mt-5 is-uppercase is-size-5 has-text-weight-bold has-text-right"
+            <button
+              v-if="auth.role ? auth.role === 'customer' : true"
+              @click="addCart"
+              class="button background-black mt-4 has-text-white is-align-self-stretch p-2 btn-shopping-card text-monserrat"
             >
-              Presentaciones
-            </span>
-            <hr class="hr-red mt-3" />
+              AÑADIR AL CARRITO
+            </button>
           </div>
         </div>
       </section>
