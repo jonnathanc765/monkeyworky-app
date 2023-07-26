@@ -1,9 +1,9 @@
 // Bulma Import
 @import '~bulma';
 * {
-  margin: 0 !important;
-  padding: 0 !important;
-  max-width: 100% !important;
+  margin: 0;
+  padding: 0;
+  max-width: 100%!important;
   font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
     Arial, sans-seri;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
@@ -17,8 +17,6 @@
 .text-bold{
   font-weight: bold !important;
 }
-
-
 
 /* VARIABLES */
 $color_red: #e20613;
@@ -94,7 +92,7 @@ body{
 }
 
 .bg-image{
-  background-image: url('');
+  // background-image: url('');
 }
 
 .background-outside {
@@ -508,4 +506,16 @@ input:focus {
 
 .chat-is-hover:hover {
   background-color: $color_text_gray;
+}
+
+.h-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-btn {
+  color: white;
+  background-color: $color_black;
+  font-size: 18px;
+  padding: 10px 20px;
 }

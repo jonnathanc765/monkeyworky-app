@@ -12,7 +12,6 @@ export default defineComponent({
 
 
     setup(props: { item: any }, context: SetupContext) {
-        console.log(props);
         const openCategory = () => {
             context.emit('openCategory', props.item);
         };

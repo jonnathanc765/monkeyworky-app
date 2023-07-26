@@ -218,7 +218,7 @@ export default defineComponent({
 
     return {
       route,
-      categories,
+    categories,
       response,
       auth,
       getFooterId,
@@ -234,7 +234,6 @@ export default defineComponent({
   font-family: 'Montserrat', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 

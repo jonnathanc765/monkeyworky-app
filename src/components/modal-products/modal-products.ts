@@ -13,7 +13,6 @@ import { SetupContext } from '@vue/runtime-core';
 export default {
   props: ['item'],
   setup(props: any, context: SetupContext) {
-    console.log('props del item', props.item);
     const quantity = ref([]);
     const router = useRouter();
     const authStore = useStore();

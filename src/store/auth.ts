@@ -134,5 +134,8 @@ export default createStore({
         isAuth(state) {
             return state.auth.id;
         },
+        isCustomer(state) {
+            return state?.auth?.role == 'customer'
+        }
     },
 });

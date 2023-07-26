@@ -1,5 +1,5 @@
 <template>
-  <div ref="el" class="columns is-12 div-header p-0">
+  <div ref="el" class="columns is-12 div-header">
     <!-- LEFT -->
     <div class="column is-3 is-12-mobile p-0" style="height:100%">
       <router-link to="/home" class="is-4 ">
