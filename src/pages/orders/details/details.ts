@@ -6,6 +6,7 @@ import { textDetails, textInfo } from '../../../core/global/statusOrder';
 import { useStore } from 'vuex';
 import { addClassValidation } from '../../../core/global/validation';
 import { enviroment } from '../../../core/env/enviroment';
+import PaymentDetailModal from './modal/payment.vue'
 
 export default {
   components: {
@@ -17,6 +18,9 @@ export default {
     ),
     Modal: defineAsyncComponent(() =>
       import('@/pages/orders/details/modal/modal.vue')
+    ),
+    PaymentDetailModal: defineAsyncComponent(() =>
+      import('@/pages/orders/details/modal/payment.vue')
     ),
     ModalPayment: defineAsyncComponent(() =>
       import('@/pages/admin/my-sales/modal/modal.vue')
@@ -34,6 +38,7 @@ export default {
     const itemId = ref(0);
     const itemValue = ref(0);
     const payment = ref(false);
+    const paymentDetails = ref(false)
 
     const auth = computed(() => {
       return authStore.state.auth;
@@ -145,6 +150,14 @@ export default {
       payment.value = true;
     };
 
+    const openPaymentDetailModal = () => {
+      paymentDetails.value = true
+    }
+
+    const dimmissPaymentDetails = () => {
+      paymentDetails.value = false
+    }
+
     const sendWhatsapp = () => {
       const text = generateWhatsappText();
       window.location.replace(
@@ -216,6 +229,9 @@ export default {
       itemValue,
       itemId,
       openModal,
+      paymentDetails,
+      openPaymentDetailModal,
+      dimmissPaymentDetails
     };
   },
 };

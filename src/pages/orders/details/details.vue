@@ -12,6 +12,12 @@
     :id="itemId"
     :amount="itemValue"
   ></ModalPayment>
+  <PaymentDetailModal
+    v-if="details?.order?.status === 'added_payment' && details?.payment"
+    :show="paymentDetails"
+    :payment="details?.payment"
+    v-on:dimissModal="dimmissPaymentDetails"
+  />
   <div
     v-if="details.order && !isActive"
     class="gradient-gray background-monkeys"
@@ -45,6 +51,12 @@
               class="is-size-6 is-mobile is-size-7-mobile has-text-centered color-text-gray"
             >
               {{ text(details.order.status) }}
+              <span
+                v-if="
+                  details.order.status == 'added_payment' && details.payment
+                "
+                class="mt-2"
+              >Puedes ver los detalles del soporte de pago <a href="#" @click="openPaymentDetailModal">Aquí</a></span>
               <button
                 @click="
                   details.order.status != 'pending_for_payment' ||

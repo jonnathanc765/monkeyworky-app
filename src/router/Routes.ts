@@ -124,6 +124,12 @@ export class Routes {
         component: () => import('@/pages/admin/categories/categories.vue'),
         meta: { requiresAuth: true },
       },
+      {
+        path: '/banners',
+        name: 'banners',
+        component: () => import('@/pages/admin/banners/Index.vue'),
+        meta: { requiresAuth: true },
+      },
       /*
         REDIRECT
       */

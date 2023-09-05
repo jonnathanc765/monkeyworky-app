@@ -62,5 +62,15 @@
         "customerMarginTopNonSelectedTracking": "true",
         "selected": "true",
         "title": "Gestión de clientes"
+    },
+    {
+        "name": "bannersManagement",
+        "changeActive": "bannersManagement",
+        "to": "/banners",
+        "customerMarginTop": "true",
+        "customerMarginTopNonSelected": "true",
+        "customerMarginTopNonSelectedTracking": "true",
+        "selected": "true",
+        "title": "Gestión de banners"
     }
 ]
