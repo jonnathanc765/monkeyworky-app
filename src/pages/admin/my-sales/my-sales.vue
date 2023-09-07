@@ -143,7 +143,7 @@
                       >
                         <img
                           :src="
-                            `${$env.url}/storage/icons-sky/icons/tracking-de-pedidos2.png`
+                            `${$env.url}/images/icons-sky/icons/tracking-de-pedidos2.png`
                           "
                           alt=""
                           style="width: 35px; height: auto"
@@ -204,7 +204,7 @@
                       >
                         <img
                           :src="
-                            `${$env.url}/storage/icons-sky/icons/ver-detalles.png`
+                            `${$env.url}/images/icons-sky/icons/ver-detalles.png`
                           "
                           alt=""
                           style="width: 35px; height: auto"

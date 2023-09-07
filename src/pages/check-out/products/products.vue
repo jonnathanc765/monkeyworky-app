@@ -20,7 +20,7 @@
           <div class="is-flex is-relative">
             <!-- IMG -->
             <img
-              :src="`${$env.url}/storage/${item.product.picture_url}`"
+              :src="`${$env.url}/images/${item.product.picture_url}`"
               class="column is-2 is-2-mobile logo-product-check m-auto"
               :alt="item.product.name"
             />

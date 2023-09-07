@@ -28,7 +28,7 @@
             width="34px"
             height="34px"
             loading="lazy"
-            :src="`${$env.url}/storage/icons-sky/icons/flecha-izquierda.png`"
+            :src="`${$env.url}/images/icons-sky/icons/flecha-izquierda.png`"
             class="btn-img-carousel"
             alt="Botón izquierda"
           />
@@ -42,7 +42,7 @@
             width="34px"
             height="34px"
             loading="lazy"
-            :src="`${$env.url}/storage/icons-sky/icons/flecha-izquierda.png`"
+            :src="`${$env.url}/images/icons-sky/icons/flecha-izquierda.png`"
             class="btn-img-carousel btn-rigth-carousel"
             alt="Botón derecha"
           />

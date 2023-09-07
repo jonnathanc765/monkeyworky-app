@@ -150,7 +150,7 @@
         <span class="icon mr-1">
           <img
             :src="
-              `${$env.url}/storage/icons-sky/icons/tracking-de-pedidos-blanco.png`
+              `${$env.url}/images/icons-sky/icons/tracking-de-pedidos-blanco.png`
             "
             alt=""
           />

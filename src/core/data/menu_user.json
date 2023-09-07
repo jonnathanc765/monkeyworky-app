@@ -2,37 +2,37 @@
     {
         "name": "shop",
         "to": "/home",
-        "img": "/storage/icons-sky/icons/home.png",
-        "imgActive": "/storage/icons-sky/icons/home.png"
+        "img": "/images/icons-sky/icons/home.png",
+        "imgActive": "/images/icons-sky/icons/home.png"
     },
     {
         "name": "profile",
         "to": "/profile",
-        "img": "/storage/icons-sky/icons/profile.png",
-        "imgActive": "/storage/icons-sky/icons/profile.png"
+        "img": "/images/icons-sky/icons/profile.png",
+        "imgActive": "/images/icons-sky/icons/profile.png"
     },
     {
         "name": "cart",
         "to": "/shopping-cart",
-        "img": "/storage/icons-sky/icons/cart.png",
-        "imgActive":"/storage/icons-sky/icons/cart.png"
+        "img": "/images/icons-sky/icons/cart.png",
+        "imgActive":"/images/icons-sky/icons/cart.png"
     },
     {
         "name": "tracking",
         "to": "/tracking",
-        "img": "/storage/icons-sky/icons/tracking-de-pedidos2.png",
-        "imgActive": "/storage/icons-sky/icons/tracking-de-pedidos2.png"
+        "img": "/images/icons-sky/icons/tracking-de-pedidos2.png",
+        "imgActive": "/images/icons-sky/icons/tracking-de-pedidos2.png"
     },
     {
         "name": "conversations",
         "to": "/conversations",
-        "img": "/storage/icons-sky/icons/conversation.png",
-        "imgActive": "/storage/icons-sky/icons/conversation.png"
+        "img": "/images/icons-sky/icons/conversation.png",
+        "imgActive": "/images/icons-sky/icons/conversation.png"
     },
     {
         "name": "registerPayment",
         "to": "/my/sales",
-        "img": "/storage/icons-sky/icons/register-payment.png",
-        "imgActive": "/storage/icons-sky/icons/register-payment.png"
+        "img": "/images/icons-sky/icons/register-payment.png",
+        "imgActive": "/images/icons-sky/icons/register-payment.png"
     }
 ]

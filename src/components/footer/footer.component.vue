@@ -6,7 +6,7 @@
   >
       <!-- CATEGORIES -->
     <div class="column is-2 pl-3 pr-3 mt-4 has-text-left has-text-centered-mobile">
-        <img :src="`${$env.url}/storage/icons-sky/icons/icon_footer.png`" style="display:block; width: 35%; margin:auto !important;">
+        <img :src="`${$env.url}/images/icons-sky/icons/icon_footer.png`" style="display:block; width: 35%; margin:auto !important;">
     </div>
 
     <!-- CATEGORIES -->

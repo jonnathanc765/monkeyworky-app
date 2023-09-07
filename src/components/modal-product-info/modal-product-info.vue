@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-md-4">
             <img
-              :src="`${$env.url}/storage/${item.picture_url}`"
+              :src="`${$env.url}/images/${item.picture_url}`"
               :alt="item.name"
               width="400px"
               height="400px"

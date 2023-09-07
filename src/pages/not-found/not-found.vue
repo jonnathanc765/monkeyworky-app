@@ -9,7 +9,7 @@
           class="column is-10-widescreen is-10-desktop is-10-tablet is-12-mobile pr-5 pl-5"
         >
           <img
-            src="https://backend.monkeyworky.com/public/storage/icons-sky/icons/404.png"
+            src="https://backend.monkeyworky.com/public/images/icons-sky/icons/404.png"
             class="mb-3"
             alt=""
             style="width: 50% !important"

@@ -29,7 +29,7 @@
             <h2 class="mb-3">
               <strong>Comprobante de pago</strong>
             </h2>
-            <img :src="`${$env.url}/storage/${payment.voucher}`" class="w-100">
+            <img :src="`${$env.url}/images/${payment.voucher}`" class="w-100">
           </div>
         </div>
       </section>

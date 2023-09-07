@@ -40,8 +40,8 @@
         class="column is-3 is-5-mobile cursor-pointer"
         :src="
           type !== item.delivery_management_id
-            ? `${$env.url}/storage/${item.icon}`
-            : `${$env.url}/storage/${item.icon_active}`
+            ? `${$env.url}/images/${item.icon}`
+            : `${$env.url}/images/${item.icon_active}`
         "
         alt="Delivery"
       />

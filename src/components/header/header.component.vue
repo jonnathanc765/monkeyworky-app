@@ -4,7 +4,7 @@
     <div class="column is-3 is-12-mobile p-0" style="height:100%">
       <router-link to="/home" class="is-4 ">
         <img
-          :src="`${$env.url}/storage/icons-sky/icons/logo.png`"
+          :src="`${$env.url}/images/icons-sky/icons/logo.png`"
           alt="Logo"
           class="column is-3 is-4-mobile is-3-tablet m-auto p-0 py-2 img-icon-header"
         />
@@ -63,7 +63,7 @@
           to="/shopping-cart"
           class="btn-header is-size-6-desktop is-size-7-tablet  is-size-7-mobile is-align-content-end"
         >
-          <img :src="`${$env.url}/storage/icons-sky/icons/car.png`" style="display:block; width: 25px; margin:auto;">
+          <img :src="`${$env.url}/images/icons-sky/icons/car.png`" style="display:block; width: 25px; margin:auto;">
         </router-link>
 
         <div
@@ -145,7 +145,7 @@
                         <img
                           class="column icon-notification-header is-1 is-1-mobile"
                           :src="
-                            `${$env.url}/storage/icons-sky/icons/adjuntar-mi-pago.png`
+                            `${$env.url}/images/icons-sky/icons/adjuntar-mi-pago.png`
                           "
                           alt="icon"
                         />
@@ -177,7 +177,7 @@
               >
                 <img 
                 id="btn-logout" 
-                :src="`${$env.url}/storage/icons-sky/icons/configuration.png`" 
+                :src="`${$env.url}/images/icons-sky/icons/configuration.png`" 
                 style="display:block; width: 25px; margin:auto;">
               </button>
             </div>

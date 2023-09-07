@@ -1,22 +1,22 @@
 [
     {
-        "img": "storage/icons-sky/banners/banner-1.jpg",
-        "imgPhone": "storage/icons-sky/banners/banner-1.jpg"
+        "img": "images/icons-sky/banners/banner-1.jpg",
+        "imgPhone": "images/icons-sky/banners/banner-1.jpg"
     },
     {
-        "img": "storage/icons-sky/banners/banner-2.jpg",
-        "imgPhone": "storage/icons-sky/banners/banner-2.jpg"
+        "img": "images/icons-sky/banners/banner-2.jpg",
+        "imgPhone": "images/icons-sky/banners/banner-2.jpg"
     },
     {
-        "img": "storage/icons-sky/banners/banner-3.jpg",
-        "imgPhone": "storage/icons-sky/banners/banner-3.jpg"
+        "img": "images/icons-sky/banners/banner-3.jpg",
+        "imgPhone": "images/icons-sky/banners/banner-3.jpg"
     },
     {
-        "img": "storage/icons-sky/banners/banner-4.jpg",
-        "imgPhone": "storage/icons-sky/banners/banner-4.jpg"
+        "img": "images/icons-sky/banners/banner-4.jpg",
+        "imgPhone": "images/icons-sky/banners/banner-4.jpg"
     },
     {
-        "img": "storage/icons-sky/banners/banner-5.jpg",
-        "imgPhone": "storage/icons-sky/banners/banner-5.jpg"
+        "img": "images/icons-sky/banners/banner-5.jpg",
+        "imgPhone": "images/icons-sky/banners/banner-5.jpg"
     }
 ]

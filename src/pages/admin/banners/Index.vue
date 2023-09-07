@@ -30,7 +30,7 @@
                 <th scope="row">{{ banner.id }}</th>
                 <td class="d-flex justify-content-center align-items-center">
                   <div id="thumbnail-container">
-                    <img :src="`${$env.url}/storage/${banner.picture}`" alt="Banner">
+                    <img :src="`${$env.url}/images/${banner.picture}`" alt="Banner">
                   </div>
                 </td>
                 <td>{{ formatDate(banner.created_at) }}</td>

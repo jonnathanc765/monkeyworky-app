@@ -28,7 +28,7 @@
             :id="'btn-header-check-' + index"
             @click="changeActive(index + 1)"
             :class="btnActive === index + 1 ? `icon-top` : ``"
-            :src="btnActive === index + 1 ? `${$env.url}/storage/icons-sky/icons/check_paso${index+1}.png` : `${$env.url}/storage/icons-sky/icons/paso${index+1}.png`"
+            :src="btnActive === index + 1 ? `${$env.url}/images/icons-sky/icons/check_paso${index+1}.png` : `${$env.url}/images/icons-sky/icons/paso${index+1}.png`"
             >
           </div>
         </div>
