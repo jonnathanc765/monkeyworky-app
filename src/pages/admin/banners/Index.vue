@@ -11,10 +11,17 @@
                 <span class="visually-hidden">Loading...</span>
               </div>
             </label>
-            <input type="file" id="banner" :disabled="loading" ref="banner" @change="uploadFile" class="form-control d-none">
+            <input type="file" accept="image/*" id="banner" :disabled="loading" ref="banner" @change="uploadFile" class="form-control d-none">
           </div>
           <div class="alert alert-warning mx-5" role="alert">
             Nota: Solo puedes tener un máximo de 5 Banners
+          </div>
+          <div class="alert alert-info mx-5" role="alert">
+            <h3>Consejos:</h3> 
+            <ul>
+              <li>- Para una mejor visualización, todas las imagenes deben tener el <strong>mismo tamaño</strong></li>
+              <li>- El tamaño de la imagen que se recomienda es de <strong>1000x300 pixeles</strong></li>
+            </ul>
           </div>
           <table class="table text-center">
             <thead>
@@ -30,7 +37,7 @@
                 <th scope="row">{{ banner.id }}</th>
                 <td class="d-flex justify-content-center align-items-center">
                   <div id="thumbnail-container">
-                    <img :src="`${$env.url}/images/${banner.picture}`" alt="Banner">
+                    <img :src="`${$env.url}${banner.picture_url}`" alt="Banner">
                   </div>
                 </td>
                 <td>{{ formatDate(banner.created_at) }}</td>
@@ -104,11 +111,11 @@ export default {
 <style lang="scss">
 table {
   #thumbnail-container {
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
     img {
       width: 100%;
-      max-width: 50px!important;
+      max-width: 1c50px!important;
     }
   }
 }

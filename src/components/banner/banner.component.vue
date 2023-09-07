@@ -35,7 +35,7 @@ export default defineComponent({
           .get('/public/banners')
           .then(result => {
             this.banners = result.data.map((banner) => {
-              let img = `images/${banner.picture}`
+              let img = banner.picture_url
               return {
                 img,
                 imgPhone: img
