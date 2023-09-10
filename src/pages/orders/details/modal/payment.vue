@@ -25,11 +25,11 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-12">
+          <div v-if="payment.voucher_url" class="col-md-12">
             <h2 class="mb-3">
               <strong>Comprobante de pago</strong>
             </h2>
-            <img :src="`${$env.url}/images/${payment.voucher}`" class="w-100">
+            <img :src="`${$env.url}${payment.voucher_url}`" class="w-100">
           </div>
         </div>
       </section>

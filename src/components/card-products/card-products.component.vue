@@ -4,7 +4,7 @@
     class="card-product is-align-items-center pt-3"
   >
     <img
-      :src="`${$env.url}/images/${item.picture_url}`"
+      :src="`${$env.url}${item.picture_url}`"
       :alt="item.name"
       width="240px"
       height="240px"

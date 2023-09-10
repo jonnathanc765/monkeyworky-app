@@ -138,7 +138,7 @@ export const categoriesStore = createStore({
     updateCategory({ dispatch }, { data, id }) {
       return new Promise((resolve, reject) => {
         AxiosService.endPoint()
-          .post(`/category/${id}`, data)
+          .put(`/category/${id}`, data)
           .then((res) => {
             dispatch('getCategories');
             resolve(res.data);

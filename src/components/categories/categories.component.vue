@@ -3,7 +3,7 @@
       <div v-if="item.subcategories.length === 1" @click="category" >
             <div class="icon-box mt-2">
               <img 
-                :src="`${$env.url}/images/${item.picture}`"
+                :src="`${$env.url}${item.picture_url}`"
                 class="category-icon cursor-pointer d-block"
               >
             </div>
@@ -15,7 +15,7 @@
       <div v-else @click="openCategory">
             <div class="icon-box mt-2">
               <img 
-                :src="`${$env.url}/images/${item.picture}`"
+                :src="`${$env.url}${item.picture_url}`"
                 class="category-icon cursor-pointer d-block"
               >
             </div>

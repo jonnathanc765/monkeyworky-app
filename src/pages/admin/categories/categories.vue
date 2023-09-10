@@ -73,7 +73,7 @@
                       <td
                         class="py-5 is-600 is-uppercase"
                       >
-                        <img :src="`${$env.url}/images/${row.picture}`" style="max-width:100px !important">
+                        <img :src="`${$env.url}${row.picture_url}`" style="max-width:100px !important">
                       </td>
                       <td class="py-5 is-600" style="min-width: 180px is-flex">
                         <button
